@@ -1,0 +1,151 @@
+
+/* ====================================
+ CSS setup ne rien modifier
+ Editer plus bas
+ * ==================================== */
+
+ /*
+ 
+*/
+
+
+body { margin: 0; padding: 0; border: 0; }
+section { min-height: 100vh; }
+div { background-color: lightgrey; }
+div:nth-of-type(5n+1) { background-color: #1abc9c; }
+div:nth-of-type(5n+2) { background-color: #3498db; }
+div:nth-of-type(5n+3) { background-color: #9b59b6; }
+div:nth-of-type(5n+4) { background-color: #e67e22; }
+div:nth-of-type(5n) { background-color: #e74c3c; }
+span { background-color: rgba(255, 255, 255, .5); border-radius: 50%;
+display: block; font-size: 48px; height: auto; line-height: 3em; textalign: center; width: 3em; }
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+    
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100vw/4 - 10px);
+    height: calc(100vw/4 - 10px);
+    margin: 5px;
+}
+    
+div:nth-child(5){
+    width: calc(100vw - 10px);
+    height: calc(100vh/3 - 10px);
+    margin: 5px;
+}
+
+span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+body { margin: 0; padding: 0; border: 0; }
+ul { list-style: none; padding: 0; margin: 0; height: 100px; }
+li { background-color: lightgrey; text-align: center; }
+li:nth-of-type(5n+1) { background-color: #1abc9c; }
+li:nth-of-type(5n+2) { background-color: #3498db; }
+li:nth-of-type(5n+3) { background-color: #9b59b6; }
+li:nth-of-type(5n+4) { background-color: #e67e22; }
+li:nth-of-type(5n) { background-color: #e74c3c; }
+a { color: white; font-size: 16px; line-height: 50px; text-decoration:
+none; }
+
+@media screen and (min-width:600px){
+    ul{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        align-items: center;
+    }
+    
+    li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+        width: calc(100vw/5);
+        height: calc(50px);
+    }
+    
+    li:hover {
+        height: 10px;
+    }
+}
+
+@media screen and (max-width:600px){
+    li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(100vw);
+        height: calc(100vh/5);
+    }
+
+}
+
+/*
+body { border: 0; margin: 0; padding: 0; }
+header { background-color: #1abc9c; line-height: 80px; }
+nav { background-color: #3498db; }
+article { background-color: #9b59b6; }
+footer { background-color: #e67e22; }
+header, nav, article, footer { color: white; padding: 10px; }
+header, footer { height: 80px; text-align: center; }
+h1, p { margin: 0 0 15px 0; }
+nav a { border-bottom: 1px solid rgba(255,255,255,.3); color: white;
+display: block; line-height: 40px; text-decoration: none; }
+
+
+main nav{
+        width:200px;
+    }
+
+@media(max-width:600px){
+  main{
+    flex-direction:column;
+  }
+  main article{
+    order:1;
+  }
+  main nav{
+    width:100%;
+    order:2;
+  }
+    
+}
+
+@media(min-width:600px){
+    
+    html, body{
+        height:100%;
+        min-height:500px;
+    }
+    main{
+        display:flex;
+        height:calc(100% - 160px);
+
+    }
+    main article{
+        flex:1;
+    }
+    
+}
+*/
+
+
+
+
+
+

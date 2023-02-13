@@ -1,0 +1,70 @@
+/* 
+Span 1 = 1° comme il sagit du p^remier span et quil est dans rien d'autre.
+Span 2 = 11° il est le premeir enfant du p
+Span 3 = 13°
+Span 4 = 2° comme iul est le seul a estre dans une ul puis li il est enj vert
+Span 5 = 11° il est le premeir enfant du p
+Span 6 = 4° il sagit du deuxieme span d'une ligne est comme c le seul a etre le seuil deuxiepme span d'un e ligne
+Span 7 = 8° il est dans une div puis un groupe exemple puis p donc il, es tle plus preci donc il est prioritere
+Span 8 = 9° il pren dle span apres a em et comme il est preci il es tprioritaire
+Span 9 = 7° il est dans un div de la balise exemple
+Span 10 = 7° il est dans un div de la balise exemple
+Span 11 = 11° il est le premeir enfant du p
+Span 12 = 10°
+*/
+span { /*1 IL color en jaune tous les span qui ne sont pas selectionne*/
+    background-color : yellow;
+}
+ul li span { /*2 il color les span qui sont dan un ul puis ul donc il color le span4 */
+background-color : green;
+}
+li span { /*3 il color les span dans les li. normalement il color le span 4 mais comme le vert est plus precis il color le span 4 en vert  */
+background-color : pink;
+}
+p span + span { /*4 il color le 2eme span de la liste donc le span 6 */
+background-color : red;
+}
+p span { /*5 il color les span en blue mais comme les p sont deja mis dans des span plus preci il color rien. */
+background-color : lightblue;
+}
+div div span { /*6 il color tous les span qui sont dan une div div */
+background-color : brown;
+}
+div.groupe span {/*7 toute les balise span qui sont dans une div et qui on une balise groupe */
+background-color : lightgray;
+}
+div.groupe .exemple span { /*8 il color le span 7 car il a un id "exemple" */
+background-color : brown;
+}
+p em+span { /*9 il prend les span qui sont apres une balise em  */
+background-color : gold;
+}
+/*10 il salactione les span qui on une balise groupe qui sont dans une div puis un p pour les coloré en orange
+span 7 span 8 span 9 span 10 
+
+span 8*/
+div.groupe p span {      
+background-color : orange;
+}
+/*11 il prend le premier span qui se situe dans un p 
+span 2 spanb 3 span 5 span 6 span 7 span 8 span span 11 span 12
+
+span 2 5 et 11 */
+p span:first-child {
+background-color : black;
+color : white;
+}
+/*12 il prend tous les span qui sont dans un mutlpiple de 2 qui sont dans un p 
+span 6 span 12
+aucun*/
+p:nth-child(2) span {
+background-color : black;
+color : white;
+}
+/*13 correspond à des éléments d'un type donné, en fonction de leur position au sein d'un groupe de frères et sœurs
+
+span 3 */
+p:nth-of-type(2) span {
+background-color : blue;
+color : white;
+}

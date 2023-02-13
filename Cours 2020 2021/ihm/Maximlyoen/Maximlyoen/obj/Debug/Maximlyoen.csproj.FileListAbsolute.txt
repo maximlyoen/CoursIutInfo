@@ -1,0 +1,5 @@
+C:\Users\maxim\Desktop\ihm\Maximlyoen\Maximlyoen\obj\Debug\Maximlyoen.csprojAssemblyReference.cache
+C:\Users\maxim\Desktop\ihm\Maximlyoen\Maximlyoen\obj\Debug\Maximlyoen.Form1.resources
+C:\Users\maxim\Desktop\ihm\Maximlyoen\Maximlyoen\obj\Debug\Maximlyoen.Properties.Resources.resources
+C:\Users\maxim\Desktop\ihm\Maximlyoen\Maximlyoen\obj\Debug\Maximlyoen.csproj.GenerateResource.cache
+C:\Users\maxim\Desktop\ihm\Maximlyoen\Maximlyoen\obj\Debug\Maximlyoen.csproj.CoreCompileInputs.cache

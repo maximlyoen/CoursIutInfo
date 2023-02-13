@@ -1,0 +1,28 @@
+package clockController;
+
+import clockModel.ClockModel;
+
+public class ClockControllerM extends ClockControllerDecorator {
+	
+	public ClockControllerM (AClockController controller)  {super(controller);}
+	
+	@Override
+	public void setMinute(int minute){
+		System.out.println("ClockControllerM - setMinute");
+		int mm = minute % ClockModel.MAX_MINSEC;
+		mm = -mm;
+		int hh = minute / ClockModel.MAX_MINSEC;
+		if ( mm < 0) { mm = mm + ClockModel.MAX_MINSEC; hh = hh-1;}
+		try {myController.getModel().setMinute(mm);} 
+		catch (Exception e) {System.out.println(e);} 
+		if ( hh != 0) { myController.setHour(hh);}
+	}
+	
+	 @Override
+	 public void incMinute(int minute){ 
+		 System.out.println("ClockControllerM - incMinute");
+		 int mm = myController.getModel().getMinute();
+		 this.setMinute(mm+minute); 
+	 } 
+		
+}

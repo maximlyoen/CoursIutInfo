@@ -1,0 +1,383 @@
+body{
+    background-image:linear-gradient(to bottom, #388F9A, #0B283A);
+}
+
+@media(min-width:1024px){
+    #bloc_page{
+        margin-top: 2vh;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        border: 2px;
+        border-style: solid;
+        border-color: black;
+    }
+    
+    article a{
+        color: blue;
+    }
+    
+    p{
+        font-size: 1.5em;
+    }
+
+    header{
+        height: 11vh;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px;
+        border-bottom-style: solid;
+        border-bottom-color: black;
+    }
+    
+    header a:hover{
+        background-color: aqua;
+        font-size: 1.3em;
+    }
+
+    #logoh{
+        width: 11vh;
+        height: 11vh;
+    }
+
+    nav{
+        display: flex;
+        justify-content: space-around;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    #liste_menu{
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+    }
+
+    ul{
+        margin-right: 4%;
+    }
+
+    li{
+        font-size: 2.1vh;
+        width: 60%;
+    }
+    
+    a{
+        color :#273746;
+    }
+
+    #baton{
+        border-right: 2px;
+        border-right-style: solid;
+        border-right-color: black;
+        padding-right: 6%;
+        margin-right: 6%;
+    }
+    
+    #baton1{
+        border-right: 2px;
+        border-right-style: solid;
+        border-right-color: black;
+        padding-right: 6%;
+        margin-right: 6%;
+    }
+
+    #recherche{
+        height: 3.5vh;
+        border-radius: 20%;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: 20%;
+        margin-left: 10%;
+    }
+    
+    #milieux{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    h1{
+        color: brown;
+        text-decoration: underline;
+        font-size: 2em;
+    }
+    
+    h2{
+        color: #BA4A00;
+        text-decoration: underline; 
+    }
+
+    p{
+        font-size: 1.2em;
+    }
+
+    footer{
+        border-top: 2px;
+        border-top-style: solid;
+        border-top-color: black;
+    }
+    
+    #logof{
+        height: 7vw;
+    }
+    
+    #logof:hover{
+        height: 8vw;
+    }
+    
+    #logof1{
+        height: 7vw;
+    }
+    
+    #logof1:hover{
+        height: 8vw;
+    }
+    
+    #logof2{
+        height: 7vw;
+    }
+    
+    #logof2:hover{
+        height: 8vw;
+    }
+    
+    #footerphoto{
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+@media(max-width:1024px){
+    #bloc_page{
+        margin-top: 2vh;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        border: 2px;
+        border-style: solid;
+        border-color: black;
+    }
+    
+    article a{
+        color: blue;
+    }
+    
+    header a{
+        font-size: 1.5vw;
+    }
+    
+    p{
+        font-size: 1em;
+    }
+
+    header{
+        height: 11vh;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px;
+        border-bottom-style: solid;
+        border-bottom-color: black;
+    }
+    
+    header a:hover{
+        background-color: aqua;
+        font-size: 1.3em;
+    }
+
+    #logoh{
+        width: 11vh;
+        height: 11vh;
+    }
+
+    nav{
+        display: flex;
+        justify-content: space-around;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    #liste_menu{
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+    }
+
+    ul{
+        margin-right: 4%;
+    }
+
+    li{
+        font-size: 2.1vh;
+        width: 60%;
+    }
+    
+    a{
+        color :#273746;
+    }
+
+    #baton{
+        border-right: 2px;
+        border-right-style: solid;
+        border-right-color: black;
+        padding-right: 6%;
+        margin-right: 6%;
+    }
+    
+    #baton1{
+        border-right: 2px;
+        border-right-style: solid;
+        border-right-color: black;
+        padding-right: 6%;
+        margin-right: 6%;
+    }
+
+    #recherche{
+        height: 3.5vh;
+        border-radius: 20%;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: 20%;
+        margin-left: 10%;
+    }
+    
+    h1{
+        color: brown;
+        text-decoration: underline;
+        font-size: 2em;
+    }
+    
+    h2{
+        color: #BA4A00;
+        text-decoration: underline; 
+    }
+
+    p{
+        font-size: 1.2em;
+    }
+    
+    #poster{
+        height: 123vw;
+    }
+
+    footer{
+        border-top: 2px;
+        border-top-style: solid;
+        border-top-color: black;
+    }
+    
+    #logof{
+        height: 7vw;
+    }
+    
+    #logof:hover{
+        height: 8vw;
+    }
+    
+    #logof1{
+        height: 7vw;
+    }
+    
+    #logof1:hover{
+        height: 8vw;
+    }
+    
+    #logof2{
+        height: 7vw;
+    }
+    
+    #logof2:hover{
+        height: 8vw;
+    }
+    
+    #footerphoto{
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+@media(max-width:600px){
+    #bloc_page{
+        margin-top: 2vh;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        border: 2px;
+        border-style: solid;
+        border-color: black;
+    }
+
+    header{
+        height: 11vh;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px;
+        border-bottom-style: solid;
+        border-bottom-color: black;
+    }
+
+    #logoh{
+        width: 11vh;
+        height: 11vh;
+    }
+
+    nav{
+        display: flex;
+        justify-content: space-around;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    #liste_menu{
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+    }
+
+    ul{
+        margin-right: 4%;
+    }
+
+    li{
+        font-size: 2.1vh;
+        width: 60%;
+    }
+    
+    h1{
+        color: brown;
+        text-decoration: underline;
+        font-size: 2em;
+    }
+    
+    h2{
+        color: #BA4A00;
+        text-decoration: underline; 
+    }
+
+    p{
+        font-size: 1.2em;
+    }
+
+    #baton{
+        border-right: 2px;
+        border-right-style: solid;
+        border-right-color: black;
+        padding-right: 6%;
+        margin-right: 6%;
+    }
+
+    #recherche{
+        height: 3.5vh;
+        border-radius: 20%;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: 20%;
+        margin-left: 10%;
+    }
+
+    footer{
+        border-top: 2px;
+        border-top-style: solid;
+        border-top-color: black;
+    }
+
+    #textfoot{
+        margin-left: 85%;
+    }
+}

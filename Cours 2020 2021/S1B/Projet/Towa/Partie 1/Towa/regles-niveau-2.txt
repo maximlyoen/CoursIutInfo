@@ -1,0 +1,3 @@
+Niveau 2 : Pose de pions uniquement
+
+Chaque tour de jeu de ce niveau est constitué d'une pose de pions. Il est interdit de poser un pion sur une case contenant un pion (ou plusieurs) d'une autre couleur. Le nombre de tours de jeu est illimité.

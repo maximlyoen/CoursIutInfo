@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="clockTest" project="ClockEtudiantS3" tests="9" started="9" failures="0" errors="0" ignored="0">
+  <testsuite name="clockTest.ClockScenariosTest" time="0.151">
+    <testcase name="scenariosDecMinute" classname="clockTest.ClockScenariosTest" time="0.05"/>
+    <testcase name="scenariosDecSecond" classname="clockTest.ClockScenariosTest" time="0.026"/>
+    <testcase name="scenariosDecHour" classname="clockTest.ClockScenariosTest" time="0.014"/>
+    <testcase name="scenariosIncHour" classname="clockTest.ClockScenariosTest" time="0.014"/>
+    <testcase name="scenariosIncMinute" classname="clockTest.ClockScenariosTest" time="0.022"/>
+    <testcase name="scenariosIncSecond" classname="clockTest.ClockScenariosTest" time="0.025"/>
+  </testsuite>
+  <testsuite name="clockTest.ClockTestsBasique" time="0.0">
+    <testcase name="testSetSeconde" classname="clockTest.ClockTestsBasique" time="0.0"/>
+    <testcase name="testSetMinute" classname="clockTest.ClockTestsBasique" time="0.0"/>
+    <testcase name="testSetHeure" classname="clockTest.ClockTestsBasique" time="0.0"/>
+  </testsuite>
+</testrun>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style type="text/css"> span { color: blue; } .italique { font-style: italic; color: blue; }</style>
+    <script type="text/javascript"> 
+        //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Map
+        var userMap=new Map();
+        userMap.set("Dupont","Jean");
+        function addUser(){
+            var nom=document.getElementById("nom").value;
+            var prenom=document.getElementById("prenom").value;
+            userMap.set(nom,prenom);
+            document.getElementById("nom").value="";
+            document.getElementById("prenom").value="";
+            afficher()
+        }
+        function afficher(){
+            var ul=document.getElementById("donnees");
+            ul.innerHTML="";
+            userMap.forEach(function(value,key){
+                var li=document.createElement("li");
+                li.innerHTML=key+" "+value;
+                ul.appendChild(li);
+            });
+        }
+        function afficherDel(){
+            var select=document.getElementById("nomDel");
+            select.innerHTML="";
+            userMap.forEach(function(value,key){
+                var option=document.createElement("option");
+                option.innerHTML=key;
+                select.appendChild(option);
+            });
+        }
+        function delUser(){
+            var nom=document.getElementById("nomDel").value;
+            userMap.delete(nom);
+            afficherDel();
+        }
+    </script>
+</head>
+<body>
+    <h1> Liste d'utilisateurs </h1> 
+        <ul id="donnees">
+        </ul>
+        <h1>Ajout d'un individu</h1>
+        <div>
+            <label>Nom</label><input id="nom" type="text" name="nom">
+            <label>Prénom</label><input  id="prenom" type="text" name="prenom">
+            <button id="add" onclick="addUser()">Add</button>
+        </div>
+        <div style="margin-top: 30px;">
+            <label>Nom à effacer</label>
+            <select id="nomDel" style="width:100px;">  
+            </select>  
+            <button id="del">del</button>
+    </div>
+</body>
+</html>

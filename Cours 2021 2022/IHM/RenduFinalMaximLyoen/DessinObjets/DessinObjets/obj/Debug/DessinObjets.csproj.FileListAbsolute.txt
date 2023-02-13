@@ -1,0 +1,12 @@
+C:\Users\maxim\Desktop\IHM\RenduFinalMaximLyoen\DessinObjets\DessinObjets\bin\Debug\DessinObjets.exe.config
+C:\Users\maxim\Desktop\IHM\RenduFinalMaximLyoen\DessinObjets\DessinObjets\bin\Debug\DessinObjets.exe
+C:\Users\maxim\Desktop\IHM\RenduFinalMaximLyoen\DessinObjets\DessinObjets\bin\Debug\DessinObjets.pdb
+C:\Users\maxim\Desktop\IHM\RenduFinalMaximLyoen\DessinObjets\DessinObjets\obj\Debug\DessinObjets.csproj.AssemblyReference.cache
+C:\Users\maxim\Desktop\IHM\RenduFinalMaximLyoen\DessinObjets\DessinObjets\obj\Debug\DessinObjets.csproj.SuggestedBindingRedirects.cache
+C:\Users\maxim\Desktop\IHM\RenduFinalMaximLyoen\DessinObjets\DessinObjets\obj\Debug\DessinObjets.FeuilleDessin.resources
+C:\Users\maxim\Desktop\IHM\RenduFinalMaximLyoen\DessinObjets\DessinObjets\obj\Debug\DessinObjets.ParamètresNoeud.resources
+C:\Users\maxim\Desktop\IHM\RenduFinalMaximLyoen\DessinObjets\DessinObjets\obj\Debug\DessinObjets.Properties.Resources.resources
+C:\Users\maxim\Desktop\IHM\RenduFinalMaximLyoen\DessinObjets\DessinObjets\obj\Debug\DessinObjets.csproj.GenerateResource.cache
+C:\Users\maxim\Desktop\IHM\RenduFinalMaximLyoen\DessinObjets\DessinObjets\obj\Debug\DessinObjets.csproj.CoreCompileInputs.cache
+C:\Users\maxim\Desktop\IHM\RenduFinalMaximLyoen\DessinObjets\DessinObjets\obj\Debug\DessinObjets.exe
+C:\Users\maxim\Desktop\IHM\RenduFinalMaximLyoen\DessinObjets\DessinObjets\obj\Debug\DessinObjets.pdb

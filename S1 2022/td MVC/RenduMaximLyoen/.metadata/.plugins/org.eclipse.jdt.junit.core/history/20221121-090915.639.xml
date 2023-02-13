@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ClockTestsBasique" project="ClockEtudiantS3" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="clockTest.ClockTestsBasique" time="0.014">
+    <testcase name="testSetSeconde" classname="clockTest.ClockTestsBasique" time="0.013"/>
+    <testcase name="testSetMinute" classname="clockTest.ClockTestsBasique" time="0.0"/>
+    <testcase name="testSetHeure" classname="clockTest.ClockTestsBasique" time="0.001"/>
+  </testsuite>
+</testrun>

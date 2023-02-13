@@ -1,0 +1,12 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><element><id>UMLPackage</id><coordinates><x>460</x><y>180</y><w>350</w><h>160</h></coordinates><panel_attributes>clockIHM
+--
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>470</x><y>210</y><w>320</w><h>110</h></coordinates><panel_attributes>ClockView
+--
+/_-serialVersionUID : long_/
+# myModel : ClockModel
+# myController : ClockController
+--
++ClockView(string, ClockModel, ClockController, int , int)
++ ClockView(string, int, int)
+
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>

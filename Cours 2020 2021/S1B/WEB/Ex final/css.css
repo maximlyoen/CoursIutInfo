@@ -1,0 +1,19 @@
+section{
+    display: flex;
+    justify-content:space-between;
+}
+
+leotbeau{
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+#leotgravebeau{
+    clip-path: circle(30%);
+    width: 55vw;
+    margin-left: -12vw;
+}
+
+#textleo{
+    shape-outside: circle(50%);
+}

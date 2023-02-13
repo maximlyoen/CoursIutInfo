@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <script>
+        function test(){
+            var prem = document.getElementById("prem").value;
+            var deux = document.getElementById("deux").value;
+            var operation = document.getElementById("operation").value;
+            var opera = document.getElementById('operation').options[document.getElementById('operation').selectedIndex].value;
+            if(opera == 'moin'){
+                var rep = parseInt(prem) - parseInt(deux)
+            }else if(opera == 'plus'){
+                var rep = parseInt(prem) + parseInt(deux)
+            }else{
+                var rep = 'Trop compliqué'
+            }
+            var txt  = document.getElementById("reponse");
+            txt.firstChild.nodeValue = rep;
+        }
+    </script>
+</head>
+<body>
+    <input type="number" id="prem" name="prem" value=0>
+    <select  id="operation" onchange="test()">
+        <option value="choice">--Please choose an operation--</option>
+        <option value="moin">-</option>
+        <option value="plus">+</option>
+    </select>
+    <input type="number" id="deux" name="deux" value=0>
+    <br>
+    <h1 id="reponse">null</h1>
+</body>
+</html>

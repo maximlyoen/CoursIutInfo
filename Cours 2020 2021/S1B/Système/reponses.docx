@@ -1,0 +1,15 @@
+1 - Répertoire dans lequel on se trouve à un instant donné durant la navigation dans le système de fichier. 
+
+2 - /home/tom/cours/communication 
+
+3 - répertoire dans un système d'exploitation multi-utilisateur contenant les fichiers appartenant à un utilisateur. 
+
+4- /home/tom
+
+5- ls ../systeme/semaine\ 1 
+
+6- /home/Tom/cours/système && tar -czf /tmp/archive.tar.gz * 
+
+7- tar -tf /tmp/archive.tar.gz 
+
+13-sed '1d' test.txt retourne test.txt sans la ligne 1 grep "^2.2.*$" retourne les lignes de ^ contenants ce schema : 2x2x<nmptquoi> x etant un caractère quelconque sort trie les lignes de ^ tac comme cat mais en sens inverse, donc trie par ordre alphabetique decroissant cut -d ':' -f3 récupère la troisieme colonne de ^ 

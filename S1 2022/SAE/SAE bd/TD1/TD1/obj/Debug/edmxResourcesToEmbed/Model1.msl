@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MusiqueSQLModelStoreContainer" CdmEntityContainer="MusiqueSQLEntities">
+    <EntitySetMapping Name="Musicien">
+      <EntityTypeMapping TypeName="MusiqueSQLModel.Musicien">
+        <MappingFragment StoreEntitySet="Musicien">
+          <ScalarProperty Name="Code_Musicien" ColumnName="Code_Musicien" />
+          <ScalarProperty Name="Nom_Musicien" ColumnName="Nom_Musicien" />
+          <ScalarProperty Name="Prénom_Musicien" ColumnName="Prénom_Musicien" />
+          <ScalarProperty Name="Année_Naissance" ColumnName="Année_Naissance" />
+          <ScalarProperty Name="Année_Mort" ColumnName="Année_Mort" />
+          <ScalarProperty Name="Code_Pays" ColumnName="Code_Pays" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Oeuvre">
+      <EntityTypeMapping TypeName="MusiqueSQLModel.Oeuvre">
+        <MappingFragment StoreEntitySet="Oeuvre">
+          <ScalarProperty Name="Code_Oeuvre" ColumnName="Code_Oeuvre" />
+          <ScalarProperty Name="Titre_Oeuvre" ColumnName="Titre_Oeuvre" />
+          <ScalarProperty Name="Sous_Titre" ColumnName="Sous_Titre" />
+          <ScalarProperty Name="Tonalité" ColumnName="Tonalité" />
+          <ScalarProperty Name="Année" ColumnName="Année" />
+          <ScalarProperty Name="Opus" ColumnName="Opus" />
+          <ScalarProperty Name="Numéro_Opus" ColumnName="Numéro_Opus" />
+          <ScalarProperty Name="Code_Type" ColumnName="Code_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Composer" TypeName="MusiqueSQLModel.Composer" StoreEntitySet="Composer">
+      <EndProperty Name="Musicien">
+        <ScalarProperty Name="Code_Musicien" ColumnName="Code_Musicien" />
+      </EndProperty>
+      <EndProperty Name="Oeuvre">
+        <ScalarProperty Name="Code_Oeuvre" ColumnName="Code_Oeuvre" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,2865 @@
+<!DOCTYPE html>
+<html>
+<title>Introduction au JS pour le front</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="http://www.informatics-tech.com/highlighter/prettify.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="http://www.informatics-tech.com/highlighter/prettify.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+
+<script src="js/mico.js"></script>
+<link href="prism.css" rel="stylesheet" />
+<style>
+.language-html xmp{
+  background: black;
+  color : white;
+}
+  tt{
+    font-weight: bold ;
+  }
+  table tr th,
+  td {
+    border: 1px solid black;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Poppins", sans-serif
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  .w3-half img {
+    margin-bottom: -6px;
+    margin-top: 16px;
+    opacity: 0.8;
+    cursor: pointer
+  }
+
+  .w3-half img:hover {
+    opacity: 1
+  }
+
+  .ajout-oga {
+    background-color: green;
+  }
+
+  .todo-oga {
+    background-color: red;
+  }
+
+  pre.enLigne {
+    display: inline;
+  }
+
+  .nicho-modif {
+    border-left: Lime 5px solid;
+    padding-left: 5px;
+    background: yellow;
+  }
+
+  video {
+    border: 2px solid black;
+  }
+
+  .code {
+    background: black;
+    color: white;
+    padding: 2px;
+    font: 500 90%/1 Roboto Mono, monospace
+  }
+
+  ;
+</style>
+
+<body>
+
+  <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;"
+    id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft"
+      style="width:100%;font-size:22px">Close Menu</a>
+    <div class="w3-container">
+      <h3 class="w3-padding-64"><b>IUT<br>Département-info</b></h3>
+    </div>
+    <div class="w3-bar-block">
+
+      <a href="#objectifs" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Objectifs</a>
+      <a href="#cours" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Présentation express du JS</a>
+      <a href="#exo1" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">JS et le DOM</a>
+      <a href="#exo2" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Requête Ajax et données
+        structurées</a>
+
+        <a href="#promesses" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Promesses</a>
+        <a href="#react" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">React</a>
+        <a href="#projet" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Projet React</a>
+        <a href="devoirBlanc/index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Devoir Blanc</a>
+      
+
+
+
+
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+    <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">&#9776;</a>
+    <span>Iut info BDX</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+    id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+    <!-- Header -->
+    <div class="w3-container" style="margin-top:80px" id="showcase">
+      <h1 id="objectifs" class="w3-jumbo"><b>Initiation au JavaScript pour la réalisation de sites</b></h1>
+      <!-- <h1 class="w3-xxxlarge w3-text-red"><b>Mise en oeuvre avec le jeu du morpion</b></h1> -->
+      <hr style="width:50px;border:5px solid red" class="w3-round">
+    </div>
+
+    <!-- Photo grid (modal) -->
+    <div class="w3-row-padding">
+      <div class="w3-half">
+        <p>
+          Lors des 4 prochaines séances vous allez vous initier au JS afin de permettre des interactions riches entre
+          l'utilisateur et le site.
+          Concrètement après cette séance vous aller apprendre à :
+        <ul>
+          <li>Interagir en JS avec les composants d'un site web</li>
+          <li>Coder (un peu) en JS (objets, fonctions, collections, ...)</li>
+          <li>Envoyer des requêtes asynchrone à un serveur</li>
+          <li>Charger des données structurées</li>
+
+          <li>Ressources utilisées (et parfois recopiées) pour faire ce cours :
+
+            <a href="https://developer.mozilla.org/">[lien1]</a>,
+            <a href="https://www.kaherecode.com/tutorial/les-fonctions-flechees-en-javascript">[lien 2]</a>
+
+            <a href="https://www.pierre-giraud.com/javascript-apprendre-coder-cours/fonction-flechee/">[lien 3]</a>
+            <a href="https://www.yvonh.com/les-fonctions-fleches-en-javascript-es6/">[lien 4]</a>
+
+            <a href="https://nouvelle-techno.fr/actualites/2019/08/31/live-coding-le-javascript-oriente-objet-es6">[lien
+              5]</a>
+            <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Promise">[lien 6</a>
+            <a
+              href="https://blog.engineering.publicissapient.fr/2017/11/14/asyncawait-une-meilleure-facon-de-faire-de-lasynchronisme-en-javascript/">[lien
+              7]</a>
+          </li>
+        </ul>
+        </p>
+
+        <!--       <p>Avant cette séance, il faut OBLIGATOIREMENT avoir lu les supports suivants : <a href="files/javascriptS4.pdf">Supports de cours de Stéphane Fosse</a>, <a href="files/Journet-Cours.pdf">Mes notes de cours</a>. Pour mon cours, les solutions aux questions posées sont dans le répertoire <span class="code">files</span> </p> -->
+
+      </div>
+
+      <div class="w3-half">
+        <img width=500px; src="img/Strip-Le-mauvais-pari-650-final1.jpg">
+      </div>
+
+    </div>
+
+
+
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+      <span class="w3-button w3-black w3-xxlarge w3-display-topright">&times;</span>
+      <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+        <img id="img01" class="w3-image">
+        <p id="caption"></p>
+      </div>
+    </div>
+
+    <!-- Services -->
+
+
+
+    <h2 id="cours" class="w3-xxlarge">Présentation express du JS</h2>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <h3>Du JS pour quoi faire ?</h3>
+
+    <h4>Du code classique : stocker des valeurs, opérations, itérations, retours, fonctions, objets…</h4>
+    <pre class="prettyprint">
+   &lt;script&gt;
+      function sum(num1){
+         var sum=0;
+         for (var i=1;i<=num1;i++)
+            sum+=i;
+         return sum;
+      }
+      alert(sum(5));
+      console.log(sum(6)); 
+   &lt;/script&gt;
+</pre>
+
+
+
+    <h4> Permettre des interactions utilisateurs et des modifications du HTML </h4>
+
+    <pre class="prettyprint">
+&lt;!--  &lt;script>
+      function sum(num1){
+         var sum=0;
+         for (var i=1;i<=num1;i++)
+            sum+=i;
+         return sum;
+      }
+      document.getElementById("add").addEventListener('click',function(){  
+         console.log(sum(document.getElementById("limite").value));
+      }); 
+   &lt;/script&gt; --&gt;
+&lt;body&gt;
+   &lt;div&gt;
+      &lt;label&gt;chiffre&lt;/label&gt;&lt;input id="limite" type="value" name="limite"&gt;
+      &lt;button id="add"&gt;Add&lt;button&gt;
+   &lt;/div&gt;
+
+       &lt;script&gt
+      function sum(num1){
+         var sum=0;
+         for (var i=1;i<=num1;i++)
+            sum+=i;
+         return sum;
+      }
+      document.getElementById("add").addEventListener('click',function(){  
+         console.log(sum(document.getElementById("limite").value));
+      }); 
+   &lt;/script&gt;
+&lt;/body&gt;
+</pre>
+
+    <p>Décommentez le bloc en haut et commenter celui du bas. Cela ne marche plus. Pourquoi ?</p>
+
+
+
+    <h3>Bases de la programmation JS</h3>
+
+
+
+    <p>
+      Proche du c et autres c-like (c++, java, ...)
+    <ul>
+      <li>Identifiants : premier caractère doit être un caractère, un _ ou un $ et ne pas être un mot réservé</li>
+      <li>commentaires : // ou /**/</li>
+      <li>utilisation du ; en fin d’instruction non obligatoire mais recommandée</li>
+      <li>utilisation des {} pour définir les blocs d’instructions</li>
+      <li>types classiques : string, boolean, number (pas de différences),
+        object, null, undefined</li>
+      <li>structures de contrôle : for, if, break,</li>
+    </ul>
+    </p>
+
+
+    <p>
+      Typage des données non obligatoire :
+
+    <pre class="prettyprint">
+var message ="hi"; // type mis à string
+message = 100; // legal mais non recommandé car le type est changé en "numeric"
+var val; // type "undefined"
+</pre>
+    </p>
+
+    <p>
+      Gestion des variables globales :
+
+    <pre class="prettyprint">
+function test (){
+ var message = "hi"; // variable locale
+ phrase="ok";
+ }
+ test ();
+ alert(message) // erreur
+ alert (phrase) // ok
+</pre>
+
+
+    instruction let.
+    <pre class="prettyprint">
+let x = 1;
+if (x === 1) {
+  let x = 2;
+  console.log(x); // 2
+}
+console.log(x);//1
+</pre>
+
+    </p>
+
+    <p>
+      for-in / for-of : l'énumération. On utilise normalement for-of sur un contenu itérable (array, map, set, ...)
+      et le for-in sur les propriétés d'un objet
+      <a href="https://alligator.io/js/for-of-for-in-loops/">Des explications supplémentaires</a> pour comprendre la
+      différence entre les deux.
+    </p>
+    <pre class="prettyprint">
+var person = ["John", "Doe", 25];
+   for (let x of person) {
+    console.log(x);
+ }
+//fonctionne, mais ...
+for (let x in person) {
+ console.log(x);
+ console.log(person[x]);
+}
+//on l'utilise plutôt dans ce cas là : 
+
+let oldCar = {
+ make: 'Toyota',
+ model: 'Tercel',
+ year: '1996'
+};
+
+for (let key in oldCar) {
+ console.log(key + "-->" + oldCar[key]);  
+ //console.log(`${key} --> ${oldCar[key]}`); // autre manière d'écrire
+}
+
+for (let propName in window){
+   console.log(propName);
+}
+
+//sur les array il y a every, some, filter, foreach mais dans ce cours, 
+//à quelques exceptions, on va privilégier for-in for-of (plus dans l'esprit ES6)   
+</pre>
+
+    <h4>Quelques spécificités sur les fonctions : </h4>
+    <p>
+
+    <pre class="prettyprint">
+function sayHi(name , message , age , ville){
+  alert("Hello " + name + " , " + message + " " + age);
+  }
+sayHi("Nicholas", "how are you?");
+  </pre>
+    </p>
+
+
+    <p>
+    <pre class="prettyprint">
+function sum(){
+  return arguments [0]+ arguments [1];
+}
+function howManyArgs (){
+  alert(arguments.length);
+}
+
+function start(name , message , age , ville){
+  alert(sum (1 ,2));
+  alert(sum("hi ","bonjour"));
+  howManyArgs("string" ,45);
+  howManyArgs ();
+  howManyArgs (12);
+}
+</pre>
+
+    Les fonctions sont des variables/objets :
+    <pre class="prettyprint">
+function callSomeFunction(someFunction , someArgument){
+  return someFunction(someArgument);
+}
+function add10(num){
+  return num +10;
+}
+
+var result1=callSomeFunction(add10 ,10);
+console.log(result1);
+function getGreeting(name){
+  return "Hello , " + name;
+}
+var result2 = callSomeFunction(getGreeting , "Bob");
+console.log(result2);  
+</pre>
+    </p>
+
+    <p>
+    <ul>
+      <li>Les types primitifs (undefined, null, boolean, number, string) sont atomiques et sont accédés par valeur
+      </li>
+      <li>Les références : objets composés de plusieurs valeurs auquelles on accède par référence uniquement (au sens
+        java)</li>
+    </ul>
+
+    <pre class="prettyprint">
+var num1 =5;
+var num2=num1; // valeur copiée
+var obj1=new Object ();
+var obj2= obj1;
+obj1.name="Nicholas";
+console.log(obj2.name);//"Nicholas"
+</pre>
+    </p>
+
+
+    <p>
+      Le passage d'arguments dans les fonctions est réalisé de la manière
+      suivante : les types primitifs sont passés par valeur et le reste par
+      référence.
+
+    <pre class="prettyprint">
+function setName(obj , age){
+  obj.name="Nicholas";
+  age =35;
+}
+var person=new Object ();
+var _age =21;
+setName(person , _age),
+alert(person.name);// Nicholas
+alert(_age);//21
+</pre>
+    </p>
+
+    <p>Mais Attention ! Un peu comme en C++ avec le passage par
+      adresse. Le passage par référence est un abus de langage. C’est en
+      fait un passage par copie de référence. Si la référence est réaffectée
+      sur un autre objet, la référence à l’objet d’orgine est perdue.</p>
+
+
+    <pre class="prettyprint">
+function setName(obj){
+  obj.name="Nicholas";
+  obj = new Object ();
+  obj.name = "Greg";
+}
+var person= new Object ();
+setName(person);
+alert(person.name); // Nicholas  
+</pre>
+
+    <h4>Les collections</h4>
+    <p>
+      Array (collections indexés). Plus d'informations <a
+        href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Collections_index%C3%A9es">ici</a>.
+    <pre class="prettyprint">
+var colors= new Array ();
+var colors= new Array (20);
+var colors= new Array("red", "blue", "green");
+//ou
+var colors = ["red", "blue", "green"];
+
+
+//tout plein de méthodes très pratiques
+colors.push("red", "green");// ajoute à la fin
+colors.pop(); // enlève et retourne le dernier élément
+colors.unshift("red","green");// ajoute deux éléments au début du tableau
+colors.shift ();// enlève et retourne le premier élément
+var values = [3,1,2,5,4];
+values.sort (); // trie le tableau par ordre croissant
+values.reverse ();// inverse le tableau
+
+//utilisation de forEach pour appeler des fonctions sur chaque item
+const array1 = ['a', 'b', 'c'];
+array1.forEach(element => console.log(element)); //version E6
+
+var fruits = ["apple", "orange", "cherry"];
+fruits.forEach(myFunction);
+function myFunction(item, index) {
+  console.log(index + ":" + item );
+}
+//on préfèrera (plus "léger")
+var couleurs = ['rouge', 'vert', 'bleu'];
+couleurs.forEach(function(couleur) {
+  console.log(couleur);
+});
+
+</pre>
+
+    </p>
+
+
+    <p>
+      Collections avec clé (valeurs ou objet ): Maps, Sets.
+      Plus d'informations <a
+        href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Collections_avec_cl%C3%A9s">ici</a>.
+    <pre class="prettyprint">
+//map : on associe une cléf et une valeur
+var sayings = new Map();
+sayings.set("dog", "woof");
+sayings.set("cat", "meow");
+sayings.set("elephant", "toot");
+sayings.size; // 3
+sayings.get("fox"); // undefined
+sayings.has("bird"); // false
+sayings.delete("dog");
+
+for (var [key, value] of sayings) {
+  console.log(key + " goes " + value);
+
+
+//Set : comme Array mais on garantit qu'une valeur d'un élément Set ne peut y apparaître qu'une seule fois, il est unique pour cette instance de Set
+var monEnsemble = new Set();
+monEnsemble.add(1);
+monEnsemble.add("du texte");
+monEnsemble.add("du texte");
+monEnsemble.size; // 2
+for (let item of monEnsemble) console.log(item);
+
+monEnsemble.add("toto");
+for (let item of monEnsemble) console.log(item);
+monEnsemble.has(1); // true
+monEnsemble.delete("toto");
+monEnsemble.size; // 2
+for (let item of monEnsemble) console.log(item);
+
+
+  </pre>
+    </p>
+
+
+    <h4>Les fonctions anonymes </h4>
+    <p>En JS, les fonctions anonymes sont très utilisées. Nous en avons déjà vu, c'est une fonction qui n'a pas de nom.</p>
+    <pre class="prettyprint">
+    let maFonction = function() {
+      /* instructions */
+    }
+    //appel de la fonction anonyme : 
+    maFonction();</pre>
+
+    <p>Il est possible d'auto invoquer une fonction anonyme. Cela permet d'exécuter cette fonction lors de sa création 
+      et que les variables et ne soient pas disponibles dans le reste du code.</p>
+    
+  
+    <pre class="prettyprint">
+      (function maFonction(){/*instructions*/})(); </pre>
+
+    <p>Dans le cadre de ce cours nous allons principalement utiliser des fonctions anonymes pour déclencher du code lorsqu'un évènement se produit (interaction avec un utilisateur, réponse d'un serveur, ...).</p>
+
+    <pre class="prettyprint">
+      monBouton.addEventListener('click',function(){/*CODE DE LA FONCTION ANONYME*/});</pre>
+
+
+    <h4>Les fonctions fléchées</h4>
+    <p>
+      Les fonctions fléchées : une syntaxe plus courte. Lisez la <a
+        href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Fonctions/Fonctions_fl%C3%A9ch%C3%A9es">documentation</a>
+      de mozilla pour en apprendre plus (notamment les subtilités avec this).
+      Les fonctions fléchées sont souvent anonymes et ne sont pas destinées à être utilisées pour déclarer des méthodes.
+
+    <pre class="prettyprint">
+// ES5
+const add = function(x, y) {
+    return x + y
+}
+console.log(add(5, 4)) // 9
+
+// ES6
+const addES6 = (x, y) => { return x + y }
+console.log(addES6(5, 6)) // 11
+
+
+const addES6Bis = (x, y) =>  x + y
+console.log(addES6Bis(5, 6)) // 11
+
+
+const prices = [4, 5, 14, 20, 45, 3, 8, 15]
+
+var greaterThan10 = prices.filter(function(p) {
+  return p > 10
+})
+console.log(greaterThan10) // [14, 20, 45, 15]
+
+const greaterThan10ES6 = prices.filter(p => p >= 10)
+console.log(greaterThan10ES6) // [14, 20, 45, 15]
+
+
+</pre>
+
+
+    </p>
+
+
+
+    <p>
+      Encore quelques exemples d'un même code dans différentes versions :
+
+
+    <pre class="prettyprint">
+function disBonjour(){
+  alert('Bonjour');
+}
+
+
+let disBonjour= function(){
+  alert('Bonjour');
+};
+disBonjour();
+
+let disBonjourV2= function bonjour(nom){
+if (nom){
+  alert('Bonjour ' + nom);
+}else{
+  alert('inconnu');
+  }
+};
+
+disBonjourV2();
+disBonjourV2("IUT");
+
+
+const disBonjourV3 = (nom) => {
+  if (nom){
+    alert('Bonjour ' + nom);
+  }else{
+    alert('inconnu');
+  }
+}
+disBonjourV3();
+disBonjourV3("IUT");
+  
+const disBonjourV3 = (nom) =>  nom;
+disBonjourV3("nicholas");
+
+
+const disBonjourV3 = (nom) => 
+{
+  if (nom){return 'Bonjour'+nom;}
+  else{return 'inconnu';}
+};
+alert(disBonjourV3("nicholas"));
+
+
+
+  </pre>
+    </p>
+
+
+    <h4>Les fonctions fléchées et le mot clef this.</h4>
+    <p>
+      
+      <br>Vous avez l'habitude avec Java, que this référence l'instance d'un objet. En JS c'est aussi le cas. Ainsi,
+      lorsqu'un nouvel objet est instancié chaque nouvelle fonction/méthode nommée définit son propre this.
+    <pre class="prettyprint">
+  let pierre = {name: 'Pierre'};
+  let mathilde = {name: 'Mathilde'};
+
+  function disBonjour(){
+    alert('Bonjour ' + this.name);
+  }
+
+  pierre.bonjour = disBonjour;
+  mathilde.bonjour = disBonjour;
+
+  pierre.bonjour(); 
+  mathilde.bonjour();
+
+  </pre>
+
+    <p>Dans les fonctions fléchées c'est un peu différent. Le this ne fait pas référence à une instance. Dans
+      l'esprit, les fonctions fléchées sont à utiliser comme des méthodes anonymes.
+      Nous utiliserons toujours les fonctions fléchées de manière anonyme. Elles n'utiliseront pas de constructeur.
+    </p>
+    <p>on voit dans l'exemple ci-dessous qu'une fonction fléchée n'a pas son propre this. Ici il fait référence à
+      l'objet windows.</p>
+    <pre class="prettyprint">
+var obj = {
+i: 10,
+b: () => console.log(this.i, this),
+c: function() {
+    console.log(this.i, this)
+    }
+}
+obj.b(); // undefined Window {...}
+obj.c(); // 10  Object{i:10}
+
+</pre>
+
+
+    </p>
+
+    
+
+
+    <h3>Connaitre par coeur map, filter, find et reduce </h3>
+    <h4>La méthode map : </h4>
+    <p>La méthode map() crée un nouveau tableau avec les résultats de l'appel d'une fonction fournie sur chaque élément du tableau appelant.</p>
+
+
+<pre class="prettyprint">
+const array1 = [1, 4, 9, 16];
+const map1 = array1.map(x => x * 2);
+// Array [2, 8, 18, 32]
+
+
+const persons = [
+  {nom : "Lamoureux", prenom: "Marty"},
+  {nom : "Fosse", prenom: "Stéphane"},
+  {nom : "Journet", prenom: "Nicholas"}
+];
+persons.map( item => [item.nom,item.prenom].join(" ") );
+</pre>
+
+<h4>La méthode filter : </h4>
+<p>La méthode filter() crée et retourne un nouveau tableau contenant tous les éléments du tableau d'origine qui remplissent une condition déterminée par la fonction callback (dans notre cas elle sera généralement anonyme).</p>
+<pre class="prettyprint">
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+const result = words.filter(word => word.length > 6);
+// Array ["exuberant", "destruction", "present"]
+
+//extrait un tableau contenant les personnes n'ayant pas leur prénom commençant par une majuscule
+const persons = [
+  {nom : "Lamoureux", prenom: "Marty"},
+  {nom : "Fosse", prenom: "stéphane"},
+  {nom : "Journet", prenom: "nicholas"}
+];
+persons.filter( item => item.prenom[0] >= 'a' && item.prenom[0] <= 'z' );
+</pre>
+
+<h3>La méthode find</h3>
+<p>La méthode find() renvoie la valeur du premier élément trouvé dans le tableau qui respecte la condition donnée par la fonction de test passée en argument. Sinon, la valeur undefined est renvoyée.</p>
+
+<pre class="prettyprint">
+const array1 = [5, 12, 8, 130, 44];
+const found = array1.find(element => element > 10);
+// expected output: 12
+
+const persons = [
+  {nom : "Lamoureux", prenom: "Marty"},
+  {nom : "Fosse", prenom: "stéphane"},
+  {nom : "Journet", prenom: "nicholas"}
+];
+persons.find( item => item.prenom[0] >= 'a' && item.prenom[0] <= 'z' );
+</pre>
+
+<h3>La méthode reduce</h3>
+
+<p>La méthode reduce() applique une fonction qui est un « accumulateur » et qui traite chaque valeur d'une liste (de la gauche vers la droite) afin de la réduire à une seule valeur.</p>
+<pre class="prettyprint">
+const array1 = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array1.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initialValue
+);
+
+const persons = [
+  {nom : "Lamoureux", prenom: "Marty"},
+  {nom : "Fosse", prenom: "Stéphane"},
+  {nom : "Journet", prenom: "Nicholas"}
+];
+const initialValue = "";
+persons.reduce( (accumulator, p) => accumulator + p.nom + "/" + p.prenom + " " ,  initialValue );
+//Lamoureux/Marty Fosse/stéphane Journet/nicholas
+
+
+</pre>
+console.log(sumWithInitial);
+// expected output: 10
+
+
+
+    <h3>Les objets et le JS</h3>
+
+
+    <p>
+      Une (première) manière très "java" de faire de l'objet.
+    <pre class="prettyprint">
+* Titulaires de comptes
+ */
+ class Titulaire{
+    /**
+     * Titulaires de comptes bancaires
+     * @param {string} nom Nom du titulaire
+     * @param {string} prenom Prénom du titulaire
+     */
+     constructor(nom, prenom){
+       this.nom = nom;
+       this.prenom = prenom;
+    }
+
+    /**
+     * Afficher l'identité du titulaire
+     */
+     identite(){
+       console.log(`Le titulaire s'appelle ${this.prenom} ${this.nom}`);
+    }
+ }
+
+
+/**
+ * Compte bancaire
+ */
+ class Compte{
+    /**
+     * Création du compte
+     * @param {Titulaire} titulaire Titulaire du compte
+     * @param {number} montant Montant de départ
+     */
+     constructor(titulaire, montant = 0){
+       this.titulaire = titulaire;
+       this.solde = montant;
+    }
+
+    /**
+     * Créditer le compte
+     * @param {number} montant 
+     */
+     crediter(montant){
+       this.solde += montant;
+    }
+
+    /**
+     * Débiter le compte
+     * @param {number} montant 
+     */
+     debiter(montant){
+       this.solde -= montant;
+    }
+ }
+
+
+/**
+ * Compte épargne
+ */
+ class CompteEpargne extends Compte{
+/**
+ * Création du compte
+ * @param {Titulaire} titulaire Titulaire du compte
+ * @param {number} montant Montant de départ
+ * @param {number} taux Taux d'intérêts
+ * @param {number} rythme Rythme de versement des intérêts (en millisecondes)
+ */
+ constructor(titulaire, montant = 50, taux = 0.005, rythme = 1000){
+    // Nous transférons les informations utiles à l'objet Compte
+    super(titulaire, montant);
+
+    // Nous créons les propriétés spécifiques à un compte épargne
+    this.taux = taux;
+    this.rythme = rythme;
+ } 
+}
+
+let titulaire3 = new Titulaire("Penneflamme", "Katy");
+let compte1 = new Compte(titulaire3, 25);
+
+// Nous créditons le compte de 150 euros
+compte1.crediter(150);
+
+// Nous débitons le compte de 20 euros
+compte1.debiter(20);
+
+let compteEpargne = new CompteEpargne(titulaire3, 15, 0.005, 5000);
+
+</pre>
+    </p>
+
+    <p>
+      Une variante :
+    <pre class="prettyprint">
+function Personne(prenom, nom, age, genre, interets) {
+  this.nom = {
+    prenom,
+    nom
+  };
+  this.age = age;
+  this.genre = genre;
+  this.interets = interets;
+  this.bio = function() {
+    alert(this.nom.prenom + ' ' + this.nom.nom + ' a ' + this.age + ' ans. Il aime ' + this.interets[0] + ' et ' + this.interets[1] + '.');
+  };
+  this.salutation = function() {
+    alert('Bonjour ! Je m\'appelle ' + this.nom.prenom + '.');
+  };
+};
+var personne1 = new Personne('Bob', 'Smith', 32, 'homme', ['musique', 'ski']);
+//pour instancier à partir d'une instance existante.
+var personne2 = Object.create(personne1);
+</pre>
+    </p>
+
+    <p>
+      d'autres variantes :
+    <pre class="prettyprint">
+var maVoiture = new Object();
+maVoiture.fabricant = "Ford";
+maVoiture.modèle = "Mustang";
+maVoiture.année = 1969;
+
+var maHonda = {couleur: "rouge", roue: 4, moteur: {cylindres: 4, taille: 2.2}};
+
+
+var Animal = {
+  type: "Invertébrés",        // Valeur par défaut  value of properties
+  afficherType : function() {  // Une méthode pour afficher le type Animal
+    console.log(this.type);
+  }
+}
+
+// On crée un nouveau type d'animal, animal1 
+var animal1 = Object.create(Animal);
+animal1.afficherType(); // affichera Invertébrés
+
+// On crée un type d'animal "Poissons"
+var poisson = Object.create(Animal);
+poisson.type = "Poisson";
+poisson.afficherType(); // affichera Poissons
+
+
+</pre>
+    </p>
+
+
+
+
+    <h3>Exercice 1 : fonctions, parcours de collections; ...</h3>
+    <p>
+      Complétez le code JS permettant de
+    <ul>
+      <Li>Modéliser une personne (nom, date d’anniversaire, liste d’amis)</Li>
+      <Li>Ajouter des amis à une personne</Li>
+      <Li>Afficher le nombre d'amis et la liste de mes amis (utilisez un forEach ou un for-of) </Li>
+      <Li>Afficher "je suis le plus vieux de ma bande d’amis" si c’est effectivement le cas, "je ne suis pas le plus
+        vieux" sinon.</Li>
+
+      <li></li>
+    </ul>
+
+
+    <pre class="prettyprint">
+ function Person(name, date){
+      this.name=name;
+      this.birthDay= new /*compléter*/;
+      this.friends=new /*compléter*/;
+
+      this.addfriends=function(friend){
+        /*compléter*/
+      };
+     
+
+      this.sayNameFriends=function(){
+       /*compléter*/
+      };
+      
+      this.olderthanFriends=function(){
+        /*compléter*/
+      };  
+    };
+
+
+    function start(){
+      var P1= new Person("Nicho", new Date(1949,11,10));
+      var P2= new Person("Fred", new Date(1979,09,27));
+      var P3= new Person("Seb", new Date(1980,11,20));
+      var P4= new Person("Ed", new Date(1979,02,04));
+
+      P1.addfriends(P2);
+      P1.addfriends(P3);
+      P1.addfriends(P4);
+
+      P1.sayNameFriends();
+      P1.sayNameFriendsMarcheAussi();
+
+      //if (P1.olderthanFirends(P1.birthDay))
+      if (P1.olderthanFriends())
+        console.log("je suis le plus vieux de la bande");
+      else
+        console.log("je ne suis pas le plus vieux de la bande");
+
+    }   
+</pre>
+
+    <!-- Si vous êtes perdus vous pouvez jeter un coup d’œil à la solution <a href="files/test-slides/slide34.html" target="blank">ici</a>  -->
+
+
+    <!--  <iframe width="100%" height="700px" src="http://plnkr.co/edit/MZKC2XVSURnDGJmHNaqZ"></iframe>
+ -->
+
+    </p>
+
+
+
+
+    <h2 id="exo1" class="w3-xxlarge">JS et le DOM</h2>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <h3>Les concepts les plus importants</h3>
+
+    <h4>Comprendre le DOM et sa hiérarchie de nœuds</h4>
+    <img src="img/DOM.png">
+
+    <h4>Les noeuds sont typés</h4>
+    <p>Chaque noeud a une propriété nodeType parmi 12 possibles : ELEMENT_NODE, TEXT_NODE, ATTRIBUTE_NODE, COMMENT_NODE,
+      ...
+    <pre class="prettyprint">
+var node=document.getElementById("element").firstChild;
+  alert(node);//affiche [object HTMLParagraphElement]
+  var node=document.getElementById("monImage");
+  alert(node);//affiche [object HTMLImageElement]
+  var node=document.getElementById("element").firstChild;
+  alert(node);//affiche [object Text]
+  var node=document.getElementById("monImage").attributes[0];
+  alert(node);//affiche [object Attr]
+</pre>
+    </p>
+
+
+
+    <h4>La relation entre les nœuds</h4>
+    <p>
+      <img src="img/DOM-tree.jpg">
+
+    <pre class="prettyprint">
+
+<!-- <body onload="start();"> -->
+
+ &lt;div id="papa"&gt; &lt;p id="premierFils"&gt;Premier paragraphe &lt;/p&gt; &lt;p id="secondFils"&gt;Second paragraphe &lt;/p&gt; &lt;p id="dernierFils"&gt;Dernier Paragraphe &lt;/p&gt; &lt;/div&gt;
+ &lt;div id="papaBis">
+   &lt;p id="premierFilsBis">Premier paragraphe &lt;/p&gt;
+   &lt;p id="secondFilsBis">Second paragraphe &lt;/p&gt;
+   &lt;p id="dernierFilsBis">Dernier Paragraphe &lt;/p&gt;
+ &lt;/div&gt;
+ &lt;script&gt;
+function start(){
+  var pere=document.getElementById("papa");
+  var fils1=document.getElementById("premierFils");
+  var fils2=document.getElementById("secondFils");
+  var fils3=document.getElementById("dernierFils");
+
+  alert(pere.firstChild.firstChild.nodeValue);
+  alert(pere.lastChild.firstChild.nodeValue);
+  alert(pere.childNodes[1].firstChild.nodeValue);
+  alert(fils1.parentNode);
+  alert(fils1.nextSibling.firstChild.nodeValue);
+  alert(fils3.previousSibling.firstChild.nodeValue);
+
+
+  var pereBis=document.getElementById("papaBis");
+  var fils1Bis=document.getElementById("premierFilsBis");
+  var fils2Bis=document.getElementById("secondFilsBis");
+  var fils3Bis=document.getElementById("dernierFilsBis");
+
+  alert(pereBis.firstChild.firstChild.nodeValue);
+  alert(pereBis.lastChild.firstChild.nodeValue);
+  alert(pereBis.childNodes[1].firstChild.nodeValue);
+  alert(fils1Bis.parentNode);
+  alert(fils1Bis.nextSibling.firstChild.nodeValue);
+  alert(fils3Bis.previousSibling.firstChild.nodeValue);
+}
+ &lt;/script&gt;
+
+</body>
+</pre>
+    </p>
+
+
+
+
+
+
+    <h3> Les méthodes de manipulation du DOM à connaître </h3>
+
+    <h4>Ajout d’un noeud (déplacement si le nœud existe déjà)</h4>
+
+    <p>
+    <pre class="prettyprint">
+function start(){
+  var nodeElem = document.getElementById("elem1");
+  var nodeListe = document.getElementById("liste");
+  nodeListe.appendChild(nodeElem);
+}
+</script>
+</head>
+
+  &lt;ul id="liste"&gt;
+    &lt;li id="elem1"&gt; 1 &lt;/li&gt;
+    &lt; li&gt; 2 &lt;/li&gt;
+    &lt; li> 2 &lt;/li&gt;
+    &lt; li&gt; 3 &lt;/li&gt;
+  &lt;/ul&gt;
+
+</pre>
+    </p>
+
+
+    <h4>Insertion d’un noeud avec insertBefore (déplacement si le noeud
+      existe déjà)</h4>
+    <pre class="prettyprint">
+function start(){
+  var nodeElem = document.getElementById("elem1");
+  var nodeListe = document.getElementById("liste");
+  nodeListe.insertBefore(nodeElem, nodeListe.childNodes[nodeListe.childNodes.length-2]);
+  
+}
+ 
+   &lt;ul id="liste"&gt;
+    &lt;li id="elem1"&gt; 1 &lt;/li&gt;
+    &lt; li&gt; 2 &lt;/li&gt;
+    &lt; li> 2 &lt;/li&gt;
+    &lt; li&gt; 3 &lt;/li&gt;
+  &lt;/ul&gt;
+
+
+</pre>
+
+
+    <h4>Suppression d'un noeud avec removeChild</h4>
+    <pre class="prettyprint">
+     &lt;ul id="liste"&gt;
+    &lt;li id="elem1"&gt; 1 &lt;/li&gt;
+    &lt; li&gt; 2 &lt;/li&gt;
+    &lt; li> 2 &lt;/li&gt;
+    &lt; li&gt; 3 &lt;/li&gt;
+  &lt;/ul&gt;
+
+</pre>
+
+
+    <h4>Accéder à des noeuds du DOM</h4>
+    <pre class="prettyprint">
+  document.getElementById("IdNode");
+  document.getElementsByTagName("tagName");
+  document.querySelectorAll("CSS selector");
+</pre>
+
+    <pre class="prettyprint">
+  function start(){
+  var nodeListe = document.getElementsByTagName("img");
+  //var nodeListe = document.querySelectorAll("p+p img");
+  //var nodeListe = document.getElementsByClassName("tableau");
+  alert(nodeListe.length);
+  alert(nodeListe[0].src);
+  alert(nodeListe.item(1).src);
+}
+&lt;p&gt; &lt;img src="http://urlz.fr/TnT"/&gt; &lt;/p&gt;
+&lt;p&gt; &lt;img src="http://urlz.fr/TnU"/&gt; &lt;/p&gt;
+&lt;p&gt; &lt;img src="http://urlz.fr/TnR"/&gt; &lt;/p&gt;
+</pre>
+
+
+    <h4>Modifier un noeud du DOM</h4>
+    <pre class="prettyprint">
+  node.novalue;
+  node.setAttribute("attributName", "new Value");
+</pre>
+
+    <pre class="prettyprint">
+  var node = document.getElementById("p1");
+  //le texte est un fils de node
+  node.firstChild.nodeValue="mon super texte";
+  &lt;p id="p1"&gt;  &lt;/p&gt;
+
+
+  var node = document.getElementById("img1");
+  node.setAttribute("src","http://urlz.fr/TnT");
+  alert(node.src);
+
+  &lt;p&gt; &lt;img id="img1" alt="l'atelier du peintre"/&gt; &lt;/p&gt;
+</pre>
+
+
+    <h4>Créer un noeud du DOM</h4>
+
+    <pre class="prettyprint">
+var node=document.createElement("div");
+var node=document.createTextNode("Hello world");
+</pre>
+
+
+    <pre class="prettyprint">
+var node = document.createElement("img");
+node.setAttribute("src","http://urlz.fr/TnT");
+node.title="l'atelier du peintre";
+var p1 = document.getElementById("p1");
+p1.appendChild(node);
+&lt;p id="p1"&gt; &lt;/p&gt;
+
+
+
+var node = document.createTextNode("Hellow World");
+var p1 = document.getElementById("p1") ;
+p1.appendChild(node);
+&lt;p id="p1"&gt; &lt;/p&gt;
+
+
+</pre>
+
+
+
+    <h3> Interactions en JS : HTML/DOM event</h3>
+
+    <p>
+      La gestion des événements en JS est très bien documentée. Je vous encourage à aller lire les sources suivantes :
+    <ul>
+      <Li><a href:"https://www.alsacreations.com/article/lire/578-La-gestion-des-evenements-en-JavaScript.html>LIen
+          1</a> : Objet Event, notion de flux d'événements,le gestionnaire d'événements </Li>
+      <Li><a href="https://www.w3schools.com/jsref/dom_obj_event.asp">lien 2</a> Pour la liste des événements
+        accessibles en JS</Li>
+    </ul>
+    </p>
+
+    <p>
+      Dans le cadre de ce cours nous allons survoler cette partie. En JS nous utiliserons généralement la syntaxe
+      suivante :
+
+    <pre class="prettyprint">
+  element.addEventListener(event, listener);
+</pre>
+
+    </p>
+
+    <pre class="prettyprint">
+  var formulaire = document.getElementById("coordonnees");
+  formulaire.addEventListener("submit", envoiForm, false);
+  
+  document.getElementById("clickIt").addEventListener("click", RespondClick);
+  document.getElementById("MouseOnIT").addEventListener("mouseover", RespondMouseOver);
+
+  document.getElementById("add").addEventListener('click',function(){  
+         console.log(sum(document.getElementById("limite").value));
+      }); 
+
+  // Fonction pour modifier le contenu de t2
+  function modifyText(new_text) {
+  var t2 = document.getElementById("t2");
+  t2.firstChild.nodeValue = new_text;    
+  }
+ 
+  // Ajout d'un écouteur d'évènement au tableau avec une fonction flèche
+  var el = document.getElementById("outside");
+  el.addEventListener("click", () => { modifyText("four"); }, false); 
+</pre>
+
+
+    <h4>Référence à this</h4>
+
+    <p>
+      Comme défini par <a href="https://developer.mozilla.org/fr/docs/Web/API/EventTarget/addEventListener">Mozilla</a>
+      : "Il est souvent souhaitable de référencer l'élément sur lequel le gestionnaire d’événements a été lancé. Si le
+      gestionnaire est attaché à une fonction à l'aide de addEventListener(), la valeur de this dans le gestionnaire est
+      une référence à l'élément".
+
+    <pre class="prettyprint">
+var Something = function(element) {
+  // |this| est un nouvel objet créé
+  this.name = 'Something Good';
+  this.onclick1 = function(event) {
+    console.log(this.name); // undefined (indéfini), car |this| est l'élément
+    this.style.color='red'; //OK
+  };
+  this.onclick2 = function(event) {
+    console.log(this.name); // 'Something Good', car |this| est lié à un nouvel objet créé
+  };
+  element.addEventListener('click', this.onclick1, false);
+  element.addEventListener('click', this.onclick2.bind(this), false); // Trick
+}
+var s = new Something(document.getElementById("paragraphe"));//on récupère un p
+</pre>
+
+    </p>
+
+
+    <h3>Exercice 2</h3>
+
+    <p>
+      Regardez la vidéo ci-dessous et complétez le code permettant de réaliser les modifications observées.
+    </p>
+    <ul>
+      <li>la page contient deux liens</li>
+      <li>quand on clique sur le premier lien son fond passe en bleu si on clique de nouveau dessus il passe en rouge.
+        il repasse en bleu si on clique de nouveau dessus...</li>
+      <li>quand on clique sur le second lien, le texte disparait et à la place s'affiche le mot "coucou" avec une couleur
+        de texte orange.</li>
+    </ul>
+    <video width="500" height="240" controls>
+      <source src="img/exo-interaction.m4v" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- <iframe width="100%" height="700px" src="http://plnkr.co/edit/VWBE2rlumH5WzYArYIKn"></iframe> -->
+    <h3>Exercice 3</h3>
+    <p>
+      Regardez la vidéo ci-dessous et complétez le code permettant de réaliser les modifications observées.
+    </p>
+
+    <ul>
+      <li>Deux champs input permettent de saisir deux entiers. </li>
+      <li>Une liste permet de choisir entre l'opérateur '+' ou '-'</li>
+      <li>Quand on choisit une opérande le résultat de l'opération d'affiche en dessous.</li>
+    </ul>
+
+    <video width="500" height="240" controls>
+      <source src="img/exo-operande.m4v" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- <iframe width="100%" height="700px" src="http://plnkr.co/edit/pxJQlRBGc68BHYwUyoky"></iframe>
+ -->
+
+    <pre class="prettyprint">
+  &lt;input type="number" id="nombre1" value=0&gt;
+  &lt;select id="op" name="select" &gt;
+    &lt;option value="0" selected="selected">Choose an operator&lt;/option&gt;
+    &lt;option value="1" &gt;+&lt;/option&gt;
+    &lt;option value="2"&gt;-&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;input type="number" id="nombre2" value=0&gt;
+  &lt;p id="resultat"> &lt;/p&gt;
+
+
+&lt;script type="text/javascript"&gt;  
+   document.getElementById("op").addEventListener('change', function() {    
+    });
+&lt;/script&gt;
+ </pre>
+    <h3>Exercice 4</h3>
+    <p>
+      Regardez la vidéo ci-dessous et écrivez le code permettant de réaliser les modifications observées.
+    </p>
+
+    <ul>
+      <li> la page est consitutée uniquement de balises h1 et de paragraphes.</li>
+      <li> Le code javascript doit créer automatiquement un sommaire à partir des balises h1 issues du code HTML.</li>
+      <li>ce sommaire doit être cliquable et permettre de déplacer la page à la section désirée</li>
+    </ul>
+
+    <p>
+      <video width="500" height="240" controls>
+        <source src="img/exo-titre.m4v" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </p>
+
+    <!--     <iframe width="100%" height="700px" src="http://plnkr.co/edit/OjhgqYyqbOIsCX51tMsP"></iframe> -->
+
+
+
+
+    <h3>Exercice 5</h3>
+    <p>
+      Regardez la vidéo ci-dessous et complétez le code permettant de réaliser les fonctionnalités observées.
+    <p>
+    <ul>
+      <li>La page est composée de deux champs input de type texte permettant de saisir le prénom et le nom d'un
+        personne.</li>
+      <li>Il y a également un bouton "add" qui lorsque l'on clique dessus ajoute un li dans un ul (déjà existant)
+        avec le nom et le prénom de la personne</li>
+      <li>Une liste déroulante contient tous les prénoms/noms déjà ajoutés. Quand on sélectionne un item de cette
+        liste et qu'on appuie sur le bouton "delete", le nom est supprimé de cette liste déroulant, et le li
+        correspondant est également supprimé </li>
+      <li> Vous utiliserez OBLIGATOIREMENT une map (<a
+          href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Map">documentation</a>).
+        La
+        clé sera le nom de la personne.</li>
+
+    </ul>
+    <video width="500" height="240" controls>
+      <source src="img/exercice-liste.m4v" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    </p>
+    <!-- <iframe width="100%" height="700px" src="http://plnkr.co/edit/cCMiQw8URKBGiUGb3gK8?p=preview"></iframe>-->
+
+    <pre class="prettyprint">
+&lt;style type="text/css"&gt; span { color: blue; } .italique { font-style: italic; color: blue; }&lt;/style&gt;
+  
+
+  &lt;h1&gt; Liste d'utilisateurs &lt;/h1&gt; 
+  
+  &lt;ul id="donnees"&gt;
+
+  &lt;/ul&gt;
+  
+  &lt;h1&gt;Ajout d'un individu&lt;/h1&gt;
+  &lt;div&gt;
+    &lt;label&gt;Nom&lt;/label&gt;&lt;input id="nom" type="text" name="nom"&gt;
+    &lt;label&gt;Prénom&lt;/label&gt;&lt;input  id="prenom" type="text" name="prenom"&gt;
+    &lt;button id="add"&gt;Add&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div style="margin-top: 30px;"&gt;
+    &lt;label&gt;Nom à effacer&lt;/label&gt;
+    &lt;select id="nomDel" style="width:100px;"&gt;
+      
+    &lt;/select&gt;
+    
+    &lt;button id="del"&gt;del&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;script type="text/javascript"&gt; 
+
+  //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Map
+
+  var userMap=new Map();
+
+
+&lt;/script&gt; 
+ 
+</pre>
+
+    <h3>Exercice 6</h3>
+    <p>
+      Regardez la vidéo ci-dessous et complétez le code permettant de réaliser les fonctionnalités observées.
+      La page contient une zone avec un texte à l'intérieur. en dessous il y a un lien "french" et un lien "english".
+      Lorsque la souris est positionnée sur l'un des liens le code doit :
+    <ul>
+      <li>Supprimer le nœud contenant le texte</li>
+      <li>Créer un nœud de type image et y insérer l'image du drapeau qui correspond</li>
+    </ul>
+
+
+    Lorsque la souris n'est plus positionnée sur l'un des liens le code doit :
+
+    <ul>
+      <li>Supprimer le nœud contenant l'image</li>
+    </ul>
+
+
+
+    <ul>
+      <li>Supprimer le noeud contenant le texte</li>
+      <li>Créer un noeud de type image et y insérer l'image adéquate</li>
+    </ul>
+    </p>
+    <p>
+      <video width="500" height="240" controls>
+        <source src="img/flag.m4v" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </p>
+    <!--  <iframe width="100%" height="700px" src="http://plnkr.co/edit/Lfce1YLUoOBN1A9w4sQR"></iframe> -->
+
+
+
+
+
+
+
+    <h1 id="exo2" class="w3-xxxlarge w3-text-red"><b>Requête AJAX et données structurées</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p><img width=500px; src="img/strip2.jpg"></p>
+    <h2>Préambule</h2>
+
+
+
+    <p>Comme défini dans la documentation officielle de mozilla : "La programmation asynchrone est une technique qui
+      permet à un programme de démarrer une tâche à l'exécution potentiellement longue et, au lieu d'avoir à attendre
+      la fin de la tâche, de pouvoir continuer à réagir aux autres évènements pendant l'exécution de cette tâche. Une
+      fois la tâche terminée, le programme en reçoit le résultat. De nombreuses fonctions fournies par les
+      navigateurs, dont les plus intéressantes, peuvent prendre un certain temps et sont donc asynchrone.". Dans le
+      cadre de ce cours nous allons étudier l'API de <a
+        href="https://developer.mozilla.org/fr/docs/Web/API/fetch">fetch()</a>. Avec fetch() nous allons pouvoir
+      envoyer une requête qui pourra nous répondre sous différents formats.
+    </p>
+
+    <h2>Chargement asynchrone d'une image</h2>
+    <p>Tout d'abord nous allons étudier un exemple de requête asynchrone permettant de charger une image. On imagine
+      que cette requète peut prendre du temps. L'image peut être énorme ou le serveur peut simplement mettre du temps
+      à répondre. Après avoir lancé un serveur local avaec la commande <tt>php -S localhost:4000</tt> étudiez le code
+      ci-dessous : </p>
+
+
+    <pre class="prettyprint">
+const monImage = document.querySelector('img');
+// construction d'un obet requete
+// Ici on passe simplement le nom de l'image que l'on veut récupérer sur le serveur
+//on verra plus tard qu'il est possible de passer des paramètres
+let maRequete = new Request('univ.png');
+
+//la requête part au serveur
+fetch(maRequete)
+//.then est exécuté quand la requète est revenue. Cette requète est aynschrone.
+//donc pendant le temps d'attente le site reste utilisable (l'appel n'est pas bloquant)
+.then(function (reponse) {
+  //on vérifie que le serveur à retourné un code 200 
+  if (!reponse.ok) {
+    throw new Error(`erreur HTTP! statut: ${reponse.status}`);
+  }
+  //fetch retourne ce qu'on appelle une promesse
+  //c'est un objet qui indique que tout c'est bien passé (ou pas). 
+  //ici la promesse contient la réponse (ici un blob c'est à dire un fichier binaire : l'image)        
+  return reponse.blob();
+})
+//grace à cette promesse retournée on est certain que l'image est bien téléchargée, 
+//avec le then on peut ensuite chainer la suite des traitements.
+//Sans cet appel asynchrone, 
+//on pourrait en venir à la situation ou l'image serait ajoutée via le code JS alors
+// qu'elle n'est pas encore physiquement sur votre ordinateur
+.then(function (reponse) {
+  //insertion de l'image
+  let URLobjet = URL.createObjectURL(reponse);
+  monImage.src = URLobjet;
+});
+    </pre>
+
+    <p>Sur l'image ci-dessous, on observe que l'image a été téléchargée en 24 ms.</p>
+    <p><img src="img/fetch.png" alt="on observe grace au debugger de chrome que l'image a été téléchargée en 24 ms">
+    </p>
+
+
+
+
+    <h2>Chargement asynchrone d'un fichier JSON</h2>
+
+    <p>Dans l'exemple ci-après on charge de manière asynchrone un fichier JSON dont on souhaite afficher le contenu.
+      Le principe est le même que pour l'image sauf que l'on sait qu'il faut parser des données de type texte au
+      format JSON</p>
+
+
+    <p>Le fichier JSON</p>
+
+    <pre class="prettyprint">
+[
+{
+"annee":1930,
+"vainqueur":"Uruguay"
+},
+{
+"annee":1934,
+"vainqueur":"Italie"
+},
+{
+"annee":1938,
+"vainqueur":"Italie"
+},
+{
+"annee":1950,
+"vainqueur":"Uruguay"
+},
+{
+"annee":1954,
+"vainqueur":"Allemagne"
+},
+{
+"annee":1958,
+"vainqueur":"Brésil"
+}
+]
+</pre>
+
+    <p>Le code source permettant d'afficher toutes les données :</p>
+
+
+    <pre class="prettyprint">
+const myList = document.querySelector('ul');
+const myRequest = new Request('data/foot.json');
+
+fetch(myRequest)
+  // Ici la nouveauté c'est qu'il faut retourner une promesse (via une fonction flechée) 
+  //contenant les données au format JSON
+  //Je vous encourage à mettre des points d'arrêt dans le debugger de votre navigateur
+  //pour observer le contenu des différents objets
+  .then((response) => response.json())
+  .then((data) => {
+    //JSON est un format qui permet de boucler sur le contenu (un Array)
+    for (const v of data) {
+      const listItem = document.createElement('li');
+      listItem.appendChild(
+        document.createElement('strong')
+      ).textContent = v.vainqueur;
+      //il faut avoir lu l'API pour savoir comment se nomment les attributs (ici "vainqueur" et "année")
+      listItem.append(` a gagné la coupe du monde en ${v.annee}`);          
+      myList.appendChild(listItem);
+    }
+  })
+  .catch(console.error);
+</pre>
+
+
+    <h2>Paramétrer une requète</h2>
+
+    <p>Dans certains cas, il faudra envoyer des paramètres à un serveur. On veut, dans l'exemple ci-dessous, envoyer une
+      année de coupe du monde et avoir en réponse le vainqueur</p>
+
+    <p>Il est possible d'échanger avec le serveur de deux manières différentes</p>
+    <ul>
+      <li>GET : les paramètres sont passés dans l'URL : <tt>monScript.php?nom=Nicholas</tt></li>
+      <li>POST : les paramètres sont écrits dans le corps de la requête HTTP  </li>
+    </ul>
+
+    <h3>En mode GET</h3>
+
+    <p>le code php</p>
+    <pre class="prettyprint">
+  $answers = ["1930"=>"Uruguay","1934"=>"Italie","1938"=>"Italie","1950"=>"Uruguay","1954"=>"Allemagne"];
+  $annee=$_GET["annee"];
+  $data = array();
+  if ($answers[$annee] != null){
+  echo json_encode( $answers[$annee] );
+  }
+  else{
+    echo json_encode( "Année sans coupe du monde" );
+  }
+</pre>
+    <p>le code JS</p>
+
+    <pre class="prettyprint">
+const myRequest = new Request('foot2.php?annee=1930');
+
+fetch(myRequest)
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch(err => {
+    console.log("voici l'erreur --> " + err);
+});;
+</pre>
+
+    <h3>En mode POST</h3>
+
+    <p>le code php</p>
+    <pre class="prettyprint">
+
+$answers = ["1930"=>"Uruguay","1934"=>"Italie","1938"=>"Italie","1950"=>"Uruguay","1954"=>"Allemagne"];
+$annee=$_POST["annee"];
+$data = array();
+if ($answers[$annee] != null){
+echo json_encode( $answers[$annee] );
+}
+else{
+  echo json_encode( "Année sans coupe du monde" );
+}
+
+</pre>
+
+    <p>le code JS</p>
+    <pre class="prettyprint">
+var url = 'foot3.php';
+var formData = new FormData();
+formData.append('annee', '1930');
+
+fetch(url, {
+    method: 'POST',
+    body: formData
+  })
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch(err => {
+    console.log("voici l'erreur --> " + err);
+  });
+</pre>
+
+<h3>Exercice 7 - mise en pratique : vente de planches </h3>
+
+      <p>votre client vend des planches de surf, il veut pouvoir consulter la quantité de
+        planches qu'il a vendues (3 catégories de planches : Nice, Biarritz ou Lacanau) et son bénéfice total engrangé
+        et tout ceci depuis un site web.
+      </p>
+
+      <p>Vous lui proposez de créer un site : </p>
+
+      <ul>
+        <li>Contenant un tableau de 3 lignes pour les 3 planches</li>
+        <li>Pour chaque ligne on affiche : la quantité vendue de ce modèle, le prix de vente et le prix d'achat</li>
+        <li>En dessous du tableau s'affiche le bénéfice net</li>
+        <li>Une liste déroulante contenant 4 choix : Nice, Biarritz, Lacanau ou toutes, permet à l'utilisateur
+          d'indiquer s'il veut mettre à jour les chiffres de "quantité vendue" d'un modèle précis ou de tous les modèles
+          d'un coup</li>
+        <li>Un bouton permet à l'utilisateur de demander une mise à jour des chiffres</li>
+      </ul>
+      <p>La vidéo ci-dessous illsutre le résultat attendu</p>
+      <p><video width="640" height="480" controls="">
+          <source src="img/presentation.m4v" type="video/mp4">
+          Your browser does not support the video tag.
+        </video></p>
+
+      <p>Techniquement vous décidez que : </p>
+
+      <ul>
+        <li>Les données fixes (prix de vente et d'achat) seront stockées dans un fichier JSON qui sera chargé de manière
+          asynchrone au moment du chargement du site</li>
+        <li>Les données dynamiques seront affichées après l'envoi d'une requète au serveur qui vous retourne
+          l'information désirée</li>
+      </ul>
+      <p>Voici les données </p>
+
+      <pre class="prettyprint">
+[
+    {
+        "modele": "lacanau",
+        "prixDeVente": "100",
+        "prixAchat": "30"
+    },
+    {
+        
+        "modele": "nice",
+        "prixDeVente": "150",
+        "prixAchat": "60"
+    },
+    {
+
+        "modele": "biarritz",
+        "prixDeVente": "110",
+        "prixAchat": "30"
+    }
+]
+</pre>
+      <p>Regardez le script php ci-dessous et comprennez son fonctionnement. Un simple copier/coller de ce code permet d'avoir un script capable de fournir les données.</p>
+
+      <pre class="prettyprint">
+srand((float)microtime() * 1000000);
+$nom = $_GET["nom"];
+
+$data = array();
+if ($nom != null) {
+if (strcmp("lacanau", $_GET["nom"]) === 0 or strcmp("toutes", $_GET["nom"]) === 0) {    
+  $data[]=["ville" => "lacanau", "vente" => rand(100, 1000)];
+}
+if (strcmp("biarritz", $_GET["nom"]) === 0 or strcmp("toutes", $_GET["nom"]) === 0) {
+  $data[]=["ville" => "biarritz", "vente" => rand(180, 800)];
+}
+if (strcmp("nice", $_GET["nom"]) === 0 or strcmp("toutes", $_GET["nom"]) === 0) { 
+  $data[]=["ville" => "nice", "vente" => rand(120, 1200)];
+}  
+echo json_encode($data);
+} else {
+echo json_encode("Planche inconnue");
+}
+</pre>
+
+
+<p>Télécharger <a href="">  l'archive suivante </a>. Elle contient le html et css correspondant à la vidéo. Il vous reste à coder la partie JS.</p>
+
+      <h2 id="promesses">Les promesses </h2>
+      <p>
+        Nous avons vu rapidement la notion de <tt>promesse</tt> via le <tt>return</tt> effectué dans le <tt> fetch</tt>.
+        Rentrons un peu plus dans le fonctionnement des promesses.
+      </p>
+
+      <p>
+        Une promesse est une fonction à laquelle on passera deux arguments : resolve et reject. Cette fonction est
+        exécutée immédiatement par l'implémentation de Promise qui fournit les fonctions resolve et reject (elle est
+        exécutée avant que le constructeur Promise ait renvoyé l'objet créé). Les fonctions resolve et reject,
+        lorsqu'elles sont appelées, permettent respectivement de tenir ou de rompre la promesse. On attend de
+        l'exécuteur
+        qu'il démarre un travail asynchrone puis, une fois le travail terminé, appelle la fonction resolve (si tout
+        s'est
+        bien passé) ou la fonction reject (lorsqu'il y a eu un problème) pour définir l'état final de la promesse.
+        Si une erreur est générée par l'exécuteur, la promesse est rompue et la valeur de retour de l'exécuteur est
+        ignorée. (définition mozilla). Le schéma ci-dessous détaille les différents états d'une promesse.
+      </p>
+
+      <p>
+        <img src="img/promises.png" alt="schéma qui reprend le texte descriptif juste au dessus">
+      </p>
+      <pre class="prettyprint">
+const maPremierePromesse = new Promise((resolve, reject) => {
+// réaliser une tâche asynchrone et appeler : 
+
+// resolve(uneValeur); // si la promesse est tenue
+// ou 
+// reject("raison d'echec"); // si elle est rompue
+});
+
+//L'objet promise contient deux méthodes : 
+//.then(f) appelée quand le résultat est disponible
+//.catch(f) appelée en cas d'erreur
+</pre>
+
+
+
+
+      <p>
+        Exemple d'une promesse.
+        <pre class="prettyprint">
+  const promise1 = new Promise(function(resolve, reject) {
+  //L'asynchronisme est simulé par le timeout aléatoire. 
+  setTimeout(function() {
+    resolve('foo');
+  }, Math.random() * 2000 + 1000);
+  });
+
+  //Quand la promesse est tenue c'est ce code (ce qui suit then) qui sera exécuté. resolve est "lié" à then.
+  promise1.then(function(value) {
+    console.log(value);
+    // expected output: "foo"
+  });
+  //exécution de la promesse
+  console.log(promise1);
+  // expected output: [object Promise]  foo
+  </pre>
+      </p>
+
+
+
+      <p>
+        Autre exemple d'une promesse.
+        <pre class="prettyprint">
+
+function methode1(){
+
+  return new Promise((resolve, reject) => {
+    //peut être un chargement d'une grosse image, d'un script, une requette XHR
+    console.log("Methode 1 fait un truc asynchrone");
+
+    // réussir une fois sur deux
+    if (Math.random() > .5) {
+      resolve("Tout va bien dans la méthode asynchrone 1");
+    } else {
+      reject(Error('Problème méthode 1'));
+    }
+  })
+}
+function methode2(reponse){
+  console.log(reponse);
+  return new Promise((resolve) => {
+    //peut être un chargement d'une grosse image, d'un script, une requette XHR
+    console.log("Methode 2 fait un truc asynchrone");
+    // 100% de réussite
+    resolve("Tout va bien dans la méthode asynchrone 2");
+    
+  })
+}
+
+
+methode1()
+.then((reponse) => methode2(reponse))
+.then((reponse)=> console.log(reponse,"!"))
+.catch((alert)=>console.log(alert))
+.then(() => console.log ("tout est terminé"));
+  
+
+
+</pre>
+      </p>
+
+      <p>
+        Depuis ECMAScript 2017, les opérateurs async/await permettent de simplifier l'écriture des promesses. async
+        renvoie systématiquement une promesse. Si une erreur est levée pendant l’exécution de la fonction, la promesse
+        est
+        rejetée, et si une valeur est retournée, la promesse est résolue avec cette valeur.
+        <pre class="prettyprint">
+
+  async function faireQqc(){
+   return 'resultat';
+}
+//équivaut à return Promise.resolve('résultat');
+
+  async function toto() {
+  try {
+    //await attend le résultat d'une promesse
+    const result = await faireQqc();
+    const newResult = await faireQqcAutre(result);
+    const finalResult = await faireUnTroisiemeTruc(newResult);
+    console.log('Résultat final : ' + finalResult);
+  } catch(error) {
+    //la gestion des erreurs est un peu simplifiée
+    failureCallback(error);
+  }
+}
+</pre>
+      </p>
+
+
+      <h3>Exercice 8</h3>
+
+      <p>Écrivez le code source permettant de vérifier si un login est disponible ou pas.
+
+        La page est composée d'un champ input de type texte.
+
+        Lorsque l'utilisateur appuie sur la touche TAB une promesse est en charge de lancer une requête ajax afin que le
+        serveur vérifie si le login est disponible.
+        En fonction de la réponse le texte adéquat apparaît. Il faut gérer cela avec une promesse.
+      </p>
+
+      <p>Voici le script PHP. Il est très basique. Il repond 0 si le nom est connu, 1 sinon.</p>
+
+
+      <pre class="prettyprint">
+if (strcmp("nJournet", $_GET["nom"])===0 or strcmp("sFosse", $_GET["nom"])===0)
+echo 0;
+else
+echo 1;
+</pre>
+
+</p>
+
+<h3>Exercice 9</h3>
+
+
+      <p><img src="img/jcvd.png" alt="photo de jean-claude Vandame"></p>
+
+      <p>Récupérez, <a href="files/exoJCVDetu.zip">l'archive suivante</a>. Elle contient la base du code source
+        (html/css) permettant de réaliser un site web qui affiche une citation de JCVD quand on clique sur le picto. Quand il n'y a plus de citation un message s'affiche. Regardez la vidéo et écrivez le javaScript permettant de reproduise le
+        même
+        comportement.</p>
+      <p>
+        <video width="1000" height="480" controls>
+          <source src="img/jcvd.m4v" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </p>
+
+      <h1 id="react">Débuter en react </h1>
+      <p>
+        Nous avons 8H00 pour voir les bases du React. Ce cours est librement inspiré de la documentation fournie par le site officiel de reactJS. 
+        
+      </p>
+        
+
+  <h2>Création d'un projet REACT</h2>
+<p>Commencez par créer un projet React et exécutez-le en mode développement. </p>
+  <pre class="prettyprint">
+    npx create-react-app mon-app
+    cd mon-app
+    npm start </pre>
+<p><img src="img/react1.png" alt=""></p>
+<p>Vous remarquerez qu'un grand nombre de répertoires et fichiers ont été créés. Create React App ne prend pas en charge la logique côté serveur ni les bases de données ; il crée simplement une chaîne de construction pour la partie frontale, de sorte que vous pouvez utiliser le serveur de votre choix. Sous le capot, il utilise Babel et webpack, mais vous n’avez pas besoin de connaître ces outils. Lorsque vous êtes prêt à déployer en production, exécutez <tt> npm run build </tt> pour créer une version optimisée de votre application dans le répertoire build.  </p>
+
+<p>
+Prenons le temps de comprendre l'architecture qui vient d'être créée : 
+</p>
+
+
+<ul>
+  <li><tt>node_modules</tt> contient les (nombreux) paquets node qui ont été téléchargés lors de la création du projet. Lors de l'écriture de votre code JS vous pourrez les importer pour profiter de leurs méthodes : gérer du JSON, faire des requètes asyncrhomes, ... </li>
+  <li> Le répertoire <tt>public</tt> contient (entre autre) le fichier <tt>index.html</tt>. Dans ce fichier, observez  la ligne <code class="language-html"><xmp><div id="root"></div></xmp></code>   c'est ici, lors du rendu de la page, que sera injecté le code permettant d'afficher du contenu.</li>
+  <li>dans <tt>src</tt> plusieurs fichiers sont très importants :
+    <ul>
+      <li><tt>index.js</tt> va indiquer comment construire votre page en y intégrant vos (futurs) composants. Le code exemple demande l'injection du composant <tt>App</tt>  <code class="language-html"><xmp><React.StrictMode>
+  <App />
+</React.StrictMode></xmp></code>
+
+      </li>
+
+      
+      <li> Regardez le contenu de <tt>App.js</tt>. Il contient le code qui sera injecté dans votre fichier <tt>index.html</tt>. Observez que ce code est compilé. On n'écrit pas du html comme vous en avez l'habitude. Le <tt>css</tt> qui est appliqué est celui défini dans <tt>App.css</tt></li>
+    </ul>
+    
+    </li>
+</ul> 
+
+
+
+<h2>Introduction à JSX</h2>
+
+<p>JSX, est une extension syntaxique de JavaScript. Les créateurs de React conseillent de l’utiliser React afin de décrire à quoi devrait ressembler l’interface utilisateur (UI).  JSX produit des « éléments » React. Dans la suite de ce document, nous verrons les bases de JSX dont vous aurez besoin pour bien démarrer.
+</p>
+
+<code class="language-html"><xmp>const element = <h1>Bonjour, monde !</h1>;  
+</xmp>
+</code>
+
+<p>Supprimez le contenu de  <tt>App.js</tt> et insérer ce contenu</p>
+
+
+<code class="language-html"><xmp>
+function formatName(user) {
+  return user.firstName + ' ' + user.lastName;
+}
+
+const user = {
+  firstName: 'Stéphane',
+  lastName: 'Fossé'
+};
+
+const element = (
+  <h1>
+    Bonjour, {formatName(user)} !
+  </h1>
+);
+
+return(
+  element
+);
+</xmp></code>
+
+
+<p>
+  La page suivante s'affiche. Notez que vous pouvez débugger votre code, comme vous en aviez l'habitude
+  avec du JS classique.
+</p>
+
+<p><img src="img/react2.png" alt=""></p>
+
+
+
+
+<h2> Composants et Props</h2>
+<h3> Définition</h3>
+<p>
+Les composants vous permettent de découper l'interface utilisateur en éléments indépendants et réutilisables, vous permettant ainsi de considérer chaque élément de manière isolée.
+
+Cette page fournit une introduction au concept de composants. Vous trouverez une référence détaillée de <a href="https://fr.reactjs.org/docs/react-component.html"> l’API des composants ici</a>.
+
+Conceptuellement, les composants sont comme des fonctions JavaScript. Ils acceptent des entrées quelconques (appelées « props ») et renvoient des éléments React décrivant ce qui doit apparaître à l’écran.
+</p>
+
+
+
+<code class="language-html"><xmp>
+function Welcome(props) {
+  return <h1>Bonjour, {props.name}</h1>;
+}
+</xmp></code>
+
+Mais ces éléments peuvent également représenter des composants définis par l’utilisateur :
+
+<code class="language-html"><xmp>const element = <Welcome name="Sara" />;
+</xmp></code>
+
+<p>Lorsque React rencontre un élément représentant un composant défini par l’utilisateur, il transmet les attributs JSX à ce composant sous la forme d’un objet unique <tt>props</tt>.
+
+Par exemple, ce code affiche « Bonjour, Sara » sur la page :</p>
+
+<code class="language-html"><xmp>return(
+  element
+);
+</xmp></code>
+
+Récapitulons ce qui se passe dans cet exemple :
+<ul>
+  <li>On appelle ReactDOM.render() avec l’élément <Welcome name="Sara" />.</li>
+  <li>React appelle le composant Welcome avec comme props {name: 'Sara'}</li>
+  <li>Notre composant `Welcome` retourne un élément `<code class="language-html"><xmp><h1>Bonjour, Sara</h1></xmp></code> pour résultat</li>
+  <li>React DOM met à jour efficacement le DOM pour correspondre à <code class="language-html"><xmp><h1>Bonjour, Sara</h1></xmp></code></li>
+</ul>
+
+
+<h3>Composition de composants</h3>
+<p>Il est évidemment possible de combiner les composants.</p>
+
+<p>Partons du code suivant. Nous allons le découper pour en extraire des composants. </p>
+
+<code class="language-html"><xmp>
+function Comment(props) {
+  return (
+    <div className="Comment">
+      <div className="UserInfo">
+        <img className="Avatar"
+          src={props.author.avatarUrl}
+          alt={props.author.name}
+        />
+        <div className="UserInfo-name">
+          {props.author.name}
+        </div>
+      </div>
+      <div className="Comment-text">
+        {props.text}
+      </div>
+      <div className="Comment-date">
+        {formatDate(props.date)}
+      </div>
+    </div>
+  );
+}</xmp></code>
+
+<p>Le composant Avatar n’a pas besoin de savoir qu’il figure dans un composant Comment. C’est pourquoi nous avons donné à sa prop un nom plus générique : user plutôt que author.</p>
+
+<code class="language-html"><xmp>function Avatar(props) {
+  return (
+    <img className="Avatar"
+      src={props.user.avatarUrl}
+      alt={props.user.name}
+    />
+  );
+}
+</xmp></code>
+
+
+<p>Nous pouvons faire la même chose sur <tt>UserInfo</tt></p>
+
+
+<code class="language-html"><xmp>function UserInfo(props) {
+  return (
+    <div className="UserInfo">
+      <Avatar user={props.user} />
+      <div className="UserInfo-name">
+        {props.user.name}
+      </div>
+    </div>
+  );
+}</xmp></code>
+
+
+
+<p>Ce qui permet de simplifier le composant <tt>Comment</tt></p>
+
+<code class="language-html"><xmp>function Comment(props) {
+  return (
+    <div className="Comment">
+      <UserInfo user={props.author} />
+      <div className="Comment-text">
+        {props.text}
+      </div>
+      <div className="Comment-date">
+        {formatDate(props.date)}
+      </div>
+    </div>
+  );
+}
+</xmp></code>
+
+
+
+<p>Voici le code complet  qui génère cette page</p>
+
+<p><img src="img/react3.png" alt=""></p>
+
+<code class="language-html"><xmp>
+function Avatar(props) {
+  return (
+    <img
+      className="Avatar"
+      src={props.user.avatarUrl}
+      alt={props.user.name}
+    />
+  );
+}
+
+function UserInfo(props) {
+  return (
+    <div className="UserInfo">
+      <Avatar user={props.user} />
+      <div className="UserInfo-name">{props.user.name}</div>
+    </div>
+  );
+}
+
+function Comment(props) {
+  return (
+    <div className="Comment">
+      <UserInfo user={props.author} />
+      <div className="Comment-text">{props.text}</div>
+      <div className="Comment-date">
+        {formatDate(props.date)}
+      </div>
+    </div>
+  );
+}
+
+const comment = {
+  date: new Date(),
+  text: 'I hope you enjoy learning React!',
+  author: {
+    name: 'Hello Kitty',
+    avatarUrl: 'https://placekitten.com/g/64/64',
+  },
+};
+
+return(
+  <Comment
+  date={comment.date}
+  text={comment.text}
+  author={comment.author}
+/>
+);
+}
+</xmp></code>
+
+<p><img src="img/attention.png" alt=""></p>
+<p>Les props sont en lecture seule. Un composant ne doit JAMAIS modifier ses props. La fonction suivante est interdite</p>
+
+<code class="language-html"><xmp>
+function sub(account, amount) {
+  account.total -= amount;
+}
+</xmp></code>
+
+<h2>Utiliser des classes et les états</h2>
+
+<p>Tout composant fonctionnel peut être converti en classe</p>
+
+<p>Partons d'un composant permettant d'afficher une horloge qui se met à jour toute seule. Ce code a un problème : le fait que la Clock mette en place le minuteur et mette à jour son interface utilisateur devrait être un détail d’implémentation de la Clock. </p>
+
+<code class="language-html"><xmp>
+function Clock(props) {
+  return (
+    <div>
+      <h1>Bonjour, monde !</h1>
+      <h2>Il est {props.date.toLocaleTimeString()}.</h2>
+    </div>
+  );
+}
+
+function tick() {
+  ReactDOM.render(
+    <Clock date={new Date()} />,
+    document.getElementById('root')
+  );
+}
+
+setInterval(tick, 1000);
+</xmp></code>
+
+Idéalement, on veut écrire ceci une seule fois et voir la Clock se mettre à jour elle-même :
+
+
+<code class="language-html"><xmp>ReactDOM.render(
+  <Clock />,
+  document.getElementById('root')
+);</xmp></code>
+
+<p>
+Vous pouvez convertir un composant fonctionnel comme Clock en une classe en cinq étapes :
+</p>
+
+<ul>
+  <li>Créez une classe ES6, avec le même nom, qui étend React.Component.</li>
+  <li>Ajoutez-y une méthode vide appelée render().</li>
+  <li>Déplacez le corps de la fonction dans la méthode render().</li>
+  <li>Remplacez props par this.props dans le corps de la méthode render().</li>
+  <li>Supprimez la déclaration désormais vide de la fonction.</li>
+</ul>
+
+<code class="language-html"><xmp>
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+
+  class Clock extends React.Component {
+    render() {
+      return (
+        <div>
+          <h1>Hello, world!</h1>
+          <h2>It is {this.props.date.toLocaleTimeString()}.</h2>
+        </div>
+      );
+    }
+  }
+  
+  function tick() {
+    root.render(<Clock date={new Date()} />);
+  }
+  
+  setInterval(tick, 1000);
+</xmp></code>
+
+<p>Ne recopiez pas ce code (nous allons coder une version améliorée juste après), testez le directement <a href="https://codepen.io/gaearon/pen/zKRGpo?editors=0010">ici</a></p>
+
+
+<p>
+Le state ou l’état en français va être pour un composant donné un objet accessible uniquement depuis ce composant, où l’on va pouvoir stocker les données que nous voudrons utiliser à travers notre composant. Le point clef à comprendre est que la méthode <tt>setState</tt> permet de mettre à jour un state. Cette mise à jour va invoquer la méthode <tt>render()</tt> du composant.
+</p>
+
+
+<code class="language-html"><xmp>
+import React from 'react';
+class Clock extends React.Component { 
+    //ajout d'un constructeur qui initialise le state
+    constructor(props) {
+        super(props);
+        this.state = {date: new Date()}; 
+    }
+    
+    // Dans des applications avec de nombreux composants, il est très important de libérer les ressources utilisées par les composants quand ils sont détruits.
+    // Nous voulons mettre en place un minuteur quand une Horloge apparaît dans le DOM pour la première fois. Le terme React « montage » désigne cette phase.    
+    // Nous voulons également nettoyer le minuteur quand le DOM produit par l’Horloge est supprimé. En React, on parle de « démontage ».    
+    
+    componentDidMount() { this.timerID = setInterval(() => this.tick(),1000);}
+    componentWillUnmount() { clearInterval(this.timerID);}
+    
+    tick() { 
+        //setState va invoquer render()
+        this.setState({
+            date: new Date()
+        });
+    }
+    render() {
+        return (
+            <div>
+                <h1>Bonjour, classe !</h1>
+                //on a remplacé this.props.date par this.state.date dans la méthode render()
+                <h2>Il est {this.state.date.toLocaleTimeString()}.</h2>
+            </div>
+            );
+        }
+}
+export default Clock;  
+</xmp></code>
+
+On récapitule les étapes : 
+
+<ul>
+  <li>Quand <tt>Clock</tt> est passé à <tt>root.render()</tt> (dans <tt>index.js</tt>  ), React appelle le constructeur du composant <tt>Clock</tt>. Puisque <tt>Clock</tt> a besoin d’afficher l’heure actuelle, il initialise <tt>this.state</tt> avec un objet contenant l’heure actuelle. Nous mettrons cet état à jour par la suite.
+  </li>
+  <li>React appelle ensuite la méthode <tt>render()</tt> du composant <tt>Clock</tt>. C’est comme cela que React découvre ce qu’il faut afficher à l’écran. React met ensuite à jour le DOM pour correspondre à la sortie de la méthode <tt>render()</tt> du composant <tt>Clock</tt>.</li>
+  <li>Quand la sortie de la <tt>Clock</tt> est insérée dans le DOM, React appelle la méthode de cycle de vie componentDidMount(). À l’intérieur, le composant Clock demande au navigateur de mettre en place un minuteur pour appeler la méthode tick() du composant une fois par seconde.
+  </li>
+  <li>Chaque seconde, le navigateur appelle la méthode tick(). À l’intérieur, le composant <tt>Clock</tt> planifie une mise à jour de l’interface utilisateur en appelant setState() avec un objet contenant l’heure actuelle. Grâce à l’appel à setState(), React sait que l’état a changé, et invoque à nouveau la méthode <tt>render()</tt> pour savoir ce qui devrait être affiché à l’écran. Cette fois, la valeur de this.state.date dans la méthode <tt>render()</tt> est différente, la sortie devrait donc inclure l’heure mise à jour. React met à jour le DOM en accord avec cela.
+  </li>
+  <li>Si le composant <tt>Clock</tt> finit par être retiré du DOM, React appellera la méthode de cycle de vie componentWillUnmount() pour que le minuteur soit arrêté.</li>
+</ul>
+
+
+<h2>Gérer les évènements</h2>
+
+<p>
+La gestion des événements pour les éléments React est très similaire à celle des éléments du DOM. Il y a tout de même quelques différences de syntaxe :
+</p>
+
+<ul>
+  <li>Les événements de React sont nommés en camelCase plutôt qu’en minuscules.</li>
+  <li>En JSX on passe une fonction comme gestionnaire d’événements plutôt qu’une chaîne de caractères.</li>
+
+
+<code class="language-html"><xmp>
+<button onClick={activateLasers}>
+  Activer les lasers </button>
+</xmp></code>
+
+
+<li> Autre différence importante : en React, on ne peut pas renvoyer false pour empêcher le comportement par défaut. Vous devez appeler explicitement `preventDefault`</li>
+
+<code class="language-html"><xmp>
+function ActionLink() {
+  function handleClick(e) {
+    e.preventDefault();
+    console.log('Le lien a été cliqué.');
+  }
+
+  return (
+    <a href="#" onClick={handleClick}>Clique ici </a>
+  );
+}
+</xmp></code>
+
+</ul>
+<p> Dans l'exemple ci-dessous, permet de gérer un bouton qui change de texte quand on appuie dessus. </p>
+
+<p><img src="img/react4.png" alt="">
+  <img src="img/react5.png" alt=""></p>
+
+
+
+<code class="language-html"><xmp>
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+
+    // Cette liaison est nécéssaire afin de permettre
+    // l'utilisation de `this` dans la fonction de rappel.    ---> TRES IMLPORTANT
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(state => ({
+      isToggleOn: !state.isToggleOn
+    }));
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
+    );
+  }
+}
+</xmp></code>
+
+<p>Il est possible de passer des paramètres au gestionnaire d'évènements. Voici deux versions différentes. Dans la première on utlise une fonction fléchée. Dans la seconde on utilise les attributs des données. Au click sur un item, le nom de cet item est affiché.</p>
+<p><img src="img/react6.png" alt=""></p>
+<code class="language-html"><xmp>
+class ListeFruits extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      justClicked: null,      
+      fruits: ['Pomme', 'Banane','Fraise']
+    };
+  }
+  handleClick(fruit) {
+    this.setState({ justClicked: fruit });
+  }
+  render() {
+    return (
+      <div>
+        Just clicked: {this.state.justClicked}
+        <ul>
+          {this.state.fruits.map(fruit =>
+            <li key={fruit} onClick={() => this.handleClick(fruit)}>
+              {fruit}
+            </li>
+          )}
+        </ul>
+      </div>
+    )
+  }
+}
+
+export default ListeFruits
+</xmp></code>
+
+
+
+<code class="language-html"><xmp>
+  
+class ListeFruits extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      justClicked: null,      
+      fruits: ['Pomme', 'Banane','Fraise']
+    };
+  }
+  handleClick(e) {
+    this.setState({ justClicked: e.target.dataset.fruit });
+  }
+  render() {
+    return (
+      <div>
+        Just clicked: {this.state.justClicked}
+        <ul>
+          {this.state.fruits.map(fruit =>
+            <li key={fruit} data-fruit={fruit} onClick={this.handleClick}> 
+              {fruit}
+            </li>
+          )}
+        </ul>
+      </div>
+    )
+  }
+}
+
+export default ListeFruits
+</xmp></code>
+
+
+<h2>Formulaires</h2>
+
+
+<p> Les formulaires HTML fonctionnent un peu différemment des autres éléments du DOM en React car ils possèdent naturellement un état interne. Par exemple, ce formulaire en HTML qui accepte juste un nom :</p>
+<code class="language-html"><xmp>
+<form>
+  <label>
+    Nom :
+    <input type="text" name="name" />
+  </label>
+  <input type="submit" value="Envoyer" />
+</form>
+</xmp></code>
+<p>
+Ce formulaire a le comportement classique d’un formulaire HTML et redirige sur une nouvelle page quand l’utilisateur le soumet. Si vous souhaitez ce comportement en React, vous n’avez rien à faire. Cependant, dans la plupart des cas, vous voudrez pouvoir gérer la soumission avec une fonction JavaScript, qui accède aux données saisies par l’utilisateur. La manière classique de faire ça consiste à utiliser les « composants contrôlés ».
+</p>
+<p>
+En HTML, les éléments de formulaire tels que `input`, `textarea`, et `select` maintiennent généralement leur propre état et se mettent à jour par rapport aux saisies de l’utilisateur. En React, l’état modifiable est généralement stocké dans la propriété state des composants et mis à jour uniquement avec `setState()`.
+
+  Par exemple, en reprenant le code ci-dessus pour afficher le nom lors de la soumission, on peut écrire le formulaire sous forme de composant contrôlé. Ce formulaire contient également une liste dont on souhaite envoyer la valuer choisie.
+ </p> 
+<p><img style="border: 1px solid black;" src="img/react7.png" alt=""></p>
+<p><img style="border: 1px solid black;" src="img/react8.png" alt=""></p>
+ <code class="language-html"><xmp>
+  class NameForm extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {value: '', valueFruit: 'grapefruit'};
+      this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+      
+    }
+  
+    handleChange(event) {
+      const target = event.target;
+      const valeur = target.tagName === 'INPUT' ? target.value : target.valueFruit;
+      const name = target.name;
+      this.setState({[name]: valeur});      
+    }
+  
+    handleSubmit(event) {    
+      alert('Je suis ' + this.state.value + ' et j\'aime' + this.state.valueFruit + " ");
+      event.preventDefault();
+    }
+
+  
+  
+    render() {
+      return (
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Nom :
+            <input name="value" type="text" value={this.state.value} onChange={this.handleChange} />
+          </label>         
+        
+        <br></br>
+        <label>
+          Choisissez votre parfum favori :
+          <select value={this.state.valueFruit} onChange={this.handleList}>
+            <option value="grapefruit">Pamplemousse</option>
+            <option value="lime">Citron vert</option>
+            <option value="coconut">Noix de coco</option>
+            <option value="mango">Mangue</option>
+          </select>
+        </label>
+        <input type="submit" value="Envoyer" />
+        {this.state.valueFruit}
+        </form>
+         
+      );
+    }
+  }
+
+</xmp></code>
+  
+
+
+<h3>Faire remonter l'état</h3>
+
+<p>
+Plusieurs composants ont souvent besoin de refléter les mêmes données dynamiques. Nous conseillons de faire remonter l’état partagé dans leur ancêtre commun le plus proche.
+
+Dans cette section, nous allons créer un calculateur de température qui détermine si l’eau bout à une température donnée.
+
+Commençons par un composant appelé BoilingVerdict. Il accepte une prop celsius pour la température, et il affiche si elle est suffisante pour faire bouillir l’eau :
+</p>
+
+<code class="language-html"><xmp>
+function BoilingVerdict(props) {
+  if (props.celsius >= 100) {
+    return <p>L'eau bout.</p>;
+  }
+  return <p>L'eau ne bout pas.</p>;
+}
+</xmp></code>
+<p>
+Ensuite, nous allons créer un composant appelé Calculator. Il affiche un `input` qui permet de saisir une température et de conserver sa valeur dans this.state.temperature.
+
+Par ailleurs, il affiche le BoilingVerdict pour la température saisie.
+</p>
+
+<code class="language-html"><xmp>
+class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.state = {temperature: ''};
+  }
+
+  handleChange(e) {
+    this.setState({temperature: e.target.value});
+  }
+
+  render() {
+    const temperature = this.state.temperature;
+    return (
+      <fieldset>
+        <legend>Saisissez la température en Celsius :</legend>
+        <input
+          value={temperature}
+          onChange={this.handleChange} />
+
+        <BoilingVerdict
+          celsius={parseFloat(temperature)} />
+
+      </fieldset>
+    );
+  }
+}
+</xmp></code>
+
+
+Il nous faut à présent proposer une saisie en Fahrenheit, les deux devant rester synchronisées.
+
+On peut commencer par extraire un composant TemperatureInput du code de Calculator. Ajoutons-y une prop scale qui pourra être soit "c", soit "f" :
+
+
+
+<code class="language-html"><xmp>
+const scaleNames = {
+  c: 'Celsius',
+  f: 'Fahrenheit'
+};
+
+class TemperatureInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.state = {temperature: ''};
+  }
+
+  handleChange(e) {
+    this.setState({temperature: e.target.value});
+  }
+
+  render() {
+    const temperature = this.state.temperature;
+    const scale = this.props.scale;
+    return (
+      <fieldset>
+        <legend>Saisissez la température en {scaleNames[scale]} :</legend>
+        <input value={temperature}
+               onChange={this.handleChange} />
+      </fieldset>
+    );
+  }
+}
+</xmp></code>
+
+
+<p>
+Nous pouvons désormais modifier le composant Calculator pour afficher deux saisies de température :
+</p>
+
+
+<code class="language-html"><xmp>
+class Calculator extends React.Component {
+  render() {
+    return (
+      <div>
+        <TemperatureInput scale="c" />
+        <TemperatureInput scale="f" />
+      </div>
+    );
+  }
+}
+</xmp></code>
+
+<p>
+Nous avons maintenant deux champs de saisie, mais lorsque vous saisissez la température dans un des deux, l’autre ne se met pas à jour. Nous avons besoin de les garder synchronisés.
+
+
+Qui plus est, nous ne pouvons pas afficher le BoilingVerdict depuis Calculator. Le composant Calculator n’a pas accès à la température saisie, car elle est cachée dans le TemperatureInput.
+
+D’abord, écrivons deux fonctions pour convertir de Celsius à Fahrenheit et réciproquement :
+
+<code class="language-html"><xmp>
+function toCelsius(fahrenheit) {
+  return (fahrenheit - 32) * 5 / 9;
+}
+
+function toFahrenheit(celsius) {
+  return (celsius * 9 / 5) + 32;
+}
+</xmp></code>
+
+
+Ces deux fonctions convertissent des nombres. Écrivons une autre fonction qui prend en arguments une chaîne de caractères temperature et une fonction de conversion, et qui renvoie une chaîne. Nous utiliserons cette nouvelle fonction pour calculer la valeur d’un champ en fonction de l’autre.
+
+Elle renvoie une chaîne vide pour une temperature incorrecte, et arrondit la valeur de retour à trois décimales :
+</p>
+
+<code class="language-html"><xmp>
+  function tryConvert(temperature, convert) {
+    const input = parseFloat(temperature);
+    if (Number.isNaN(input)) {
+      return '';
+    }
+    const output = convert(input);
+    const rounded = Math.round(output * 1000) / 1000;
+    return rounded.toString();
+  }
+  </xmp></code>
+
+
+<p>Avec React, partager l’état est possible en le déplaçant dans le plus proche ancêtre commun. On appelle ça « faire remonter l’état ». Nous allons supprimer l’état local de TemperatureInput et le déplacer dans le composant Calculator.
+
+  D’abord, remplaçons `this.state.temperature` par `this.props.temperature` dans le composant `TemperatureInput`. Pour le moment, faisons comme si this.props.temperature existait déjà, même si nous allons devoir la passer depuis Calculator plus tard :
+</p>
+
+<p>On sait que les props sont en lecture seule. Quand la temperature était dans l’état local, le composant TemperatureInput pouvait simplement appeler this.setState() pour la changer. Cependant, maintenant que temperature vient du parent par une prop, le composant TemperatureInput n’a pas le contrôle dessus.
+
+  Avec React, on gère généralement ça en rendant le composant « contrôlé ». Tout comme un élément DOM `input` accepte des props value et onChange, notre TemperatureInput peut accepter des props temperature et onTemperatureChange fournies par son parent Calculator.
+  
+  Maintenant, quand le composant TemperatureInput veut mettre à jour la température, il appelle `this.props.onTemperatureChange` :
+</p>
+
+<code class="language-html"><xmp>
+handleChange(e) {
+  // this.setState({temperature: e.target.value});
+  this.props.onTemperatureChange(e.target.value);
+ }
+</xmp></code>
+
+
+
+Intéressons-nous maintenant au composant Calculator.
+
+Nous allons stocker la valeur courante de temperature et de scale dans son état local. C’est l’état que nous avons « remonté » depuis les champs.
+
+Par exemple, si on saisit 37 dans le champ en Celsius, l’état local du composant Calculator sera :
+
+<code class="language-html"><xmp>
+{
+  temperature: '37',
+  scale: 'c'
+}
+</xmp></code>
+<p>
+Si plus tard on change le champ Fahrenheit à 212, l’état local du composant Calculator sera :
+</p>
+<code class="language-html"><xmp>
+{
+  temperature: '212',
+  scale: 'f'
+}
+</xmp></code>
+<p>
+On pourrait avoir stocké les valeurs des deux champs, mais en fait ce n’est pas nécessaire. Stocker uniquement la valeur la plus récente et son unité s’avère suffisant. On peut déduire la valeur de l’autre champ rien qu’à partir des valeurs de temperature et de scale stockées.
+
+Les champs restent synchronisés car leurs valeurs sont calculées depuis le même état :
+</p>
+<code class="language-html"><xmp>
+  class Calculator extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleCelsiusChange = this.handleCelsiusChange.bind(this);
+        this.handleFahrenheitChange = this.handleFahrenheitChange.bind(this);
+        this.state = {temperature: '37', scale: 'c'};
+      }
+      handleCelsiusChange(temperature) {
+        this.setState({scale: 'c', temperature});
+      }
+    
+      handleFahrenheitChange(temperature) {
+        this.setState({scale: 'f', temperature});
+      }
+
+      
+    
+    render() {
+        const scale = this.state.scale;
+        const temperature = this.state.temperature;
+        const celsius = scale === 'f' ? tryConvert(temperature, toCelsius) : temperature;
+        const fahrenheit = scale === 'c' ? tryConvert(temperature, toFahrenheit) : temperature;
+    
+        return (
+          <div>
+            <TemperatureInput
+              scale="c"
+              temperature={celsius}
+              onTemperatureChange={this.handleCelsiusChange} />
+    
+            <TemperatureInput
+              scale="f"
+              temperature={fahrenheit}
+              onTemperatureChange={this.handleFahrenheitChange} />
+    
+            <BoilingVerdict
+              celsius={parseFloat(celsius)} />
+    
+          </div>
+        );
+    }
+  } 
+</xmp></code>
+
+<code class="language-html"><xmp>
+const scaleNames = {
+  c: 'Celsius',
+  f: 'Fahrenheit'
+};
+
+class TemperatureInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    //this.state = {temperature: ''};
+  }
+
+  handleChange(e) {
+   // this.setState({temperature: e.target.value});
+   this.props.onTemperatureChange(e.target.value);
+  }
+
+  render() {
+    //const temperature = this.state.temperature;
+    const temperature = this.props.temperature;
+    const scale = this.props.scale;
+    return (
+      <fieldset>
+        <legend>Saisissez la température en {scaleNames[scale]} :</legend>
+        <input value={temperature}
+               onChange={this.handleChange} />
+      </fieldset>
+    );
+  }
+}
+</xmp></code>
+
+<p>
+Désormais, quel que soit le champ que vous modifiez, this.state.temperature et this.state.scale seront mis à jour au sein du composant Calculator. L’un des deux champ recevra la valeur telle quelle, et l’autre valeur de champ sera toujours recalculée à partir de la valeur modifiée.
+</p>
+
+
+<h1 id = "projet">Projet REACT</h1>
+
+
+<p>
+  Comme la vidéo ci-dessous l'illustre, le projet consiste à coder une page qui affiche les livres d'un auteur.
+  Votre code doit permettre de :   
+</p>
+
+<ul>
+  <li>Saisir le nom d'un auteur</li>
+  <li>Envoyer une requète à l'API google</li>
+  <li>Récupérer le JSON et proposer un affichage paginé proposant les réponses par lot de 10.</li>
+  <li>Si l'auteur n'existe pas, un message adéquat s'affiche.</li>
+</ul>
+
+<video src="img/projetGoogle.m4v" controls width="800"></video>
+
+
+<p>Le projet est noté de la manière suivante : </p>
+
+<ul>
+  <li>Construction et envoi de la réquête en utilisant AXIOS (3 points)</li>
+  <li>Réception de la requète et parsing des données (4 points) </li>
+  <li> Gestion du cas de figure où le serveur ne retourne pas de réponse (1 pont)  </li>
+  <li>Affichage des livres comme sur la vidéo (4 points). Attention, certains champs de la réponse JSON du serveur sont parfois vide </li>
+  <li>Gestion de la pagination : liens qui fonctionnent, indication du nombre de réponses... (5 points) </li>
+  <li>Qualité du code produit : découpage en classe, création de composants code mort, documentation ... (3 points)</li>
+  <li> Ce projet est à rendre sur la page <a href="#">moodle de cours</a> pour le XXX mars. Merci de déposer une archive NE CONTENANT PAS le répertoire node_modules. Pour tester votre code je ferai uniquement : "npm install". Il y aura un malus d'un point si vous intérgrer node_modules à l'archive.</li>
+</ul>
+
+
+<p>
+  Vous utiliserez <a href="https://developers.google.com/books/docs/v1/using">l'API REST de google</a> pour faire des requètes et récupérer les réponses à intégrer dans votre page.  Pour cela vous utiliserez le paquet <a href="https://www.digitalocean.com/community/tutorials/react-axios-react">axios</a>.
+
+  Voici un exemple de code : 
+</p>
+
+<code class="language-html"><xmp>
+let requete =
+      "https://www.googleapis.com/books/v1/volumes?q=inauthor:" + "Journet";
+    axios
+      .get(requete)
+      .then((response) => {
+        // la réponse (JSON) est présente dans le response.data.items;        
+      })
+      .catch((error) => {
+        console.log("Erreur serveur" + error);
+      })
+    }
+  </xmp></code>
+
+<p>L'API fonctionne sans clef. Vous pouvez directement appeller l'URL comme dans l'exemple précédent.
+Voici la réponse du serveur, qu'il vous faudra parser.
+</p>
+
+<p><img src="img/react9.png" alt=""></p>
+
+
+
+
+
+
+
+
+  <script src="prism.js"></script>
+
+  <script>
+    // Script to open and close sidebar
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("myOverlay").style.display = "none";
+    }
+
+    // Modal Image Gallery
+    function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
+    }
+  </script>
+
+</body>
+
+</html>

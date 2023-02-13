@@ -1,0 +1,10 @@
+C:\Users\maxim\Desktop\ihm\dessin\dessin\bin\Debug\dessin.exe.config
+C:\Users\maxim\Desktop\ihm\dessin\dessin\bin\Debug\dessin.exe
+C:\Users\maxim\Desktop\ihm\dessin\dessin\bin\Debug\dessin.pdb
+C:\Users\maxim\Desktop\ihm\dessin\dessin\obj\Debug\dessin.csprojAssemblyReference.cache
+C:\Users\maxim\Desktop\ihm\dessin\dessin\obj\Debug\dessin.FeuilleDessin.resources
+C:\Users\maxim\Desktop\ihm\dessin\dessin\obj\Debug\dessin.Properties.Resources.resources
+C:\Users\maxim\Desktop\ihm\dessin\dessin\obj\Debug\dessin.csproj.GenerateResource.cache
+C:\Users\maxim\Desktop\ihm\dessin\dessin\obj\Debug\dessin.csproj.CoreCompileInputs.cache
+C:\Users\maxim\Desktop\ihm\dessin\dessin\obj\Debug\dessin.exe
+C:\Users\maxim\Desktop\ihm\dessin\dessin\obj\Debug\dessin.pdb

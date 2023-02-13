@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MusiqueSQLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Composer">
+    <Key>
+      <PropertyRef Name="Code_Musicien" />
+      <PropertyRef Name="Code_Oeuvre" />
+    </Key>
+    <Property Name="Code_Musicien" Type="int" Nullable="false" />
+    <Property Name="Code_Oeuvre" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Musicien">
+    <Key>
+      <PropertyRef Name="Code_Musicien" />
+    </Key>
+    <Property Name="Code_Musicien" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom_Musicien" Type="nvarchar" MaxLength="200" />
+    <Property Name="Prénom_Musicien" Type="nvarchar" MaxLength="50" />
+    <Property Name="Année_Naissance" Type="int" />
+    <Property Name="Année_Mort" Type="int" />
+    <Property Name="Code_Pays" Type="int" />
+    <Property Name="Photo" Type="image" />
+  </EntityType>
+  <EntityType Name="Oeuvre">
+    <Key>
+      <PropertyRef Name="Code_Oeuvre" />
+    </Key>
+    <Property Name="Code_Oeuvre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titre_Oeuvre" Type="nvarchar" MaxLength="250" />
+    <Property Name="Sous_Titre" Type="nvarchar" MaxLength="200" />
+    <Property Name="Tonalité" Type="nvarchar" MaxLength="20" />
+    <Property Name="Année" Type="int" />
+    <Property Name="Opus" Type="nvarchar" MaxLength="20" />
+    <Property Name="Numéro_Opus" Type="int" />
+    <Property Name="Code_Type" Type="int" />
+  </EntityType>
+  <Association Name="Composer_FK00">
+    <End Role="Musicien" Type="Self.Musicien" Multiplicity="1" />
+    <End Role="Composer" Type="Self.Composer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Musicien">
+        <PropertyRef Name="Code_Musicien" />
+      </Principal>
+      <Dependent Role="Composer">
+        <PropertyRef Name="Code_Musicien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Composer_FK01">
+    <End Role="Oeuvre" Type="Self.Oeuvre" Multiplicity="1" />
+    <End Role="Composer" Type="Self.Composer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Oeuvre">
+        <PropertyRef Name="Code_Oeuvre" />
+      </Principal>
+      <Dependent Role="Composer">
+        <PropertyRef Name="Code_Oeuvre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MusiqueSQLModelStoreContainer">
+    <EntitySet Name="Composer" EntityType="Self.Composer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Musicien" EntityType="Self.Musicien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Oeuvre" EntityType="Self.Oeuvre" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="Composer_FK00" Association="Self.Composer_FK00">
+      <End Role="Musicien" EntitySet="Musicien" />
+      <End Role="Composer" EntitySet="Composer" />
+    </AssociationSet>
+    <AssociationSet Name="Composer_FK01" Association="Self.Composer_FK01">
+      <End Role="Oeuvre" EntitySet="Oeuvre" />
+      <End Role="Composer" EntitySet="Composer" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

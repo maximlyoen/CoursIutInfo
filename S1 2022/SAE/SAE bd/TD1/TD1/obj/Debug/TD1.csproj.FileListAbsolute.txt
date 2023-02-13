@@ -1,0 +1,34 @@
+Z:\Documents\TD1\TD1\bin\Debug\TD1.exe.config
+Z:\Documents\TD1\TD1\bin\Debug\TD1.exe
+Z:\Documents\TD1\TD1\bin\Debug\TD1.pdb
+Z:\Documents\TD1\TD1\bin\Debug\EntityFramework.dll
+Z:\Documents\TD1\TD1\bin\Debug\EntityFramework.SqlServer.dll
+Z:\Documents\TD1\TD1\bin\Debug\EntityFramework.xml
+Z:\Documents\TD1\TD1\bin\Debug\EntityFramework.SqlServer.xml
+Z:\Documents\TD1\TD1\bin\Debug\fr\EntityFramework.resources.dll
+Z:\Documents\TD1\TD1\obj\Debug\TD1.csproj.AssemblyReference.cache
+Z:\Documents\TD1\TD1\obj\Debug\TD1.csproj.SuggestedBindingRedirects.cache
+Z:\Documents\TD1\TD1\obj\Debug\TD1.Form1.resources
+Z:\Documents\TD1\TD1\obj\Debug\TD1.Properties.Resources.resources
+Z:\Documents\TD1\TD1\obj\Debug\TD1.csproj.GenerateResource.cache
+Z:\Documents\TD1\TD1\obj\Debug\TD1.csproj.CoreCompileInputs.cache
+Z:\Documents\TD1\TD1\obj\Debug\TD1.csproj.CopyComplete
+Z:\Documents\TD1\TD1\obj\Debug\TD1.exe
+Z:\Documents\TD1\TD1\obj\Debug\TD1.pdb
+C:\Users\maxim\Desktop\SAE bd\TD1\TD1\bin\Debug\TD1.exe.config
+C:\Users\maxim\Desktop\SAE bd\TD1\TD1\bin\Debug\TD1.exe
+C:\Users\maxim\Desktop\SAE bd\TD1\TD1\bin\Debug\TD1.pdb
+C:\Users\maxim\Desktop\SAE bd\TD1\TD1\bin\Debug\EntityFramework.dll
+C:\Users\maxim\Desktop\SAE bd\TD1\TD1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\maxim\Desktop\SAE bd\TD1\TD1\bin\Debug\EntityFramework.xml
+C:\Users\maxim\Desktop\SAE bd\TD1\TD1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\maxim\Desktop\SAE bd\TD1\TD1\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\maxim\Desktop\SAE bd\TD1\TD1\obj\Debug\TD1.csproj.AssemblyReference.cache
+C:\Users\maxim\Desktop\SAE bd\TD1\TD1\obj\Debug\TD1.csproj.SuggestedBindingRedirects.cache
+C:\Users\maxim\Desktop\SAE bd\TD1\TD1\obj\Debug\TD1.Form1.resources
+C:\Users\maxim\Desktop\SAE bd\TD1\TD1\obj\Debug\TD1.Properties.Resources.resources
+C:\Users\maxim\Desktop\SAE bd\TD1\TD1\obj\Debug\TD1.csproj.GenerateResource.cache
+C:\Users\maxim\Desktop\SAE bd\TD1\TD1\obj\Debug\TD1.csproj.CoreCompileInputs.cache
+C:\Users\maxim\Desktop\SAE bd\TD1\TD1\obj\Debug\TD1.csproj.CopyComplete
+C:\Users\maxim\Desktop\SAE bd\TD1\TD1\obj\Debug\TD1.exe
+C:\Users\maxim\Desktop\SAE bd\TD1\TD1\obj\Debug\TD1.pdb

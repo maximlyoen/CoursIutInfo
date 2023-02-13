@@ -1,0 +1,3 @@
+Niveau 1 : Pose sur un plateau vide (une seule action).
+
+Une partie de ce niveau n'est constituée que d'un tour de jeu, dans lequel le joueur noir peut simplement poser un pion.

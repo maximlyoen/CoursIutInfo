@@ -1,0 +1,19 @@
+[
+    {
+        "modele": "lacanau",
+        "prixDeVente": "100",
+        "prixAchat": "30"
+    },
+    {
+        
+        "modele": "nice",
+        "prixDeVente": "150",
+        "prixAchat": "60"
+    },
+    {
+
+        "modele": "biarritz",
+        "prixDeVente": "110",
+        "prixAchat": "30"
+    }
+]

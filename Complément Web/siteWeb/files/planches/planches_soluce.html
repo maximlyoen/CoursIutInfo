@@ -1,0 +1,98 @@
+<html>
+
+<head>
+  <title>Planches � gogo</title>
+  <link rel="stylesheet" type="text/css" href="planches.css" />
+  <script>
+      function prixDeVente() {
+        const myRequest = new Request('planche.json');
+        fetch(myRequest)
+          .then((response) => response.json())
+          .then((data) => {
+            for (var p of data) {
+              var  were=  document.querySelector("."+p.modele);
+              were.children[2].textContent = p.prixDeVente;
+              were.children[3].textContent = p.prixAchat;
+            }
+          })
+          .catch(console.error);
+      } 
+
+      function getPlanchesVendues() {
+          const myRequest = new Request('l.php?nom=' + document.getElementById('typePlanche').value);
+          fetch(myRequest)
+            .then((response) => response.json())
+            .then((data) => {
+              var benef = 0;
+              for (var p of data) {
+                console.log(p)
+                var  were=  document.querySelector("."+p.ville);
+                were.children[1].textContent = p.vente;
+                benef += p.vente * ((were.children[2].innerHTML)-(were.children[3].innerHTML));
+              }
+              document.getElementById('benef').textContent = benef;
+            })
+            .catch(console.error);
+
+        }
+
+
+    
+  </script>
+</head>
+
+<body onload="prixDeVente()">
+  <h1>Planches � gogo :: Tableau de bord</h1>
+  <div id="planches">
+    <table width="50%"><br />
+      <tr>
+        <th></th>
+        <td>quantit� vendue</td>
+        <td>prix de vente</td>
+        <td>Prix achat</td>
+      </tr>
+
+      <tr class="lacanau">
+        <th>Planche mod�le Lacanau</th>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr class="biarritz">
+        <th>Planche mod�le Biarritz</th>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr class="nice">
+        <th>Planche mod�le Nice</th>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table><br />
+    <h2>B�n�fice net :
+      <span id="benef">0</span> �
+    </h2>
+
+    <select id="typePlanche">
+      <option value="lacanau" selected="selected">Lacanau</option>
+      <option value="biarritz">Biarritz</option>
+      <option value="nice">Nice</option>
+      <option value="toutes">Toutes</option>
+    </select>
+    <button onClick="getPlanchesVendues();">
+      Actualiser
+    </button>
+
+
+
+  </div>
+
+
+  </script>
+</body>
+
+</html>

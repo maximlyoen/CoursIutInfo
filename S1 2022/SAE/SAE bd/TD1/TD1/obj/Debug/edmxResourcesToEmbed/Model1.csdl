@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MusiqueSQLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Musicien">
+    <Key>
+      <PropertyRef Name="Code_Musicien" />
+    </Key>
+    <Property Name="Code_Musicien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom_Musicien" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Prénom_Musicien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Année_Naissance" Type="Int32" />
+    <Property Name="Année_Mort" Type="Int32" />
+    <Property Name="Code_Pays" Type="Int32" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Oeuvre" Relationship="Self.Composer" FromRole="Musicien" ToRole="Oeuvre" />
+  </EntityType>
+  <EntityType Name="Oeuvre">
+    <Key>
+      <PropertyRef Name="Code_Oeuvre" />
+    </Key>
+    <Property Name="Code_Oeuvre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Titre_Oeuvre" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Sous_Titre" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Tonalité" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Année" Type="Int32" />
+    <Property Name="Opus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Numéro_Opus" Type="Int32" />
+    <Property Name="Code_Type" Type="Int32" />
+    <NavigationProperty Name="Musicien" Relationship="Self.Composer" FromRole="Oeuvre" ToRole="Musicien" />
+  </EntityType>
+  <Association Name="Composer">
+    <End Role="Musicien" Type="Self.Musicien" Multiplicity="*" />
+    <End Role="Oeuvre" Type="Self.Oeuvre" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="MusiqueSQLEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Musicien" EntityType="Self.Musicien" />
+    <EntitySet Name="Oeuvre" EntityType="Self.Oeuvre" />
+    <AssociationSet Name="Composer" Association="Self.Composer">
+      <End Role="Musicien" EntitySet="Musicien" />
+      <End Role="Oeuvre" EntitySet="Oeuvre" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<title>TP noté / Java</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="http://www.informatics-tech.com/highlighter/prettify.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js' type='text/javascript'></script>
+<script src="http://www.informatics-tech.com/highlighter/prettify.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+<style>
+.code{background: black; color:white;padding:2px;font: 500 90%/1 Roboto Mono,monospace};
+table tr th,td{
+  border:1px solid black;
+  padding: 6px;
+} 
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.drapeau td {text-align:center;width:10%;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+.ajout-oga {background-color: green;}
+.todo-oga {background-color: red;}
+pre.enLigne{display: inline;}
+.nicho-modif{border-left: Lime 5px solid;padding-left: 5px;background: yellow;}
+p {display: inline-block;}
+/* Keyboard key style */
+kbd{
+	font-size:0.7em;
+	border:1px solid gray;
+	box-shadow:1px 0 1px 0 #eee, 0 2px 0 2px #ccc, 0 2px 0 3px #444;
+	border-radius:3px;
+	margin:2px 3px;
+	padding:1px 5px;
+}
+
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:250px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>IUT Info Bdx</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#Q1" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Question 1</a> 
+    <a href="#Q2" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Question 2</a> 
+    <a href="#Q3" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Question 3</a> 
+    
+    
+    
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">&#9776;</a>
+  <span>IUT info BDX</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+	<div class="w3-container"  id="intro" style="margin-top:80px">
+    <h1 class="w3-jumbo"><b>Devoir machine Client riche</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>1h45 <br>Tous documents autorisés</b></h1>
+    <hr style="width:500px;border:5px solid red" class="w3-round">
+  </div>
+  
+  <!-- Introduction -->
+	<div  class="w3-row-padding">
+
+	  <h2>Consignes</h2>
+
+<p> 
+<p>A la fin de la séance, créez une archive de votre code et déposez la sur <a href="https://moodle1.u-bordeaux.fr/course/view.php?id=3801"> cette page moodle</a>.</p>
+<div></div>
+<p><span style="color:red;">ATTENTION ! </span> pensez à bien mettre dans l'archive le js, le css et le html de chaque question.</p>
+<p>Pensez à sauvegarder votre code fréquemment.</p>
+ <p>Vous êtes libre d'utiliser JQuery si vous le souhaitez</p>
+ <p>Pour chaque question j'indique le nombres de points et le temps maximum qu'il faut y passer</p>
+
+<p>Seul le dernier exercice est un peu compliqué, les deux premiers sont très proches de ceux vus en cours.</p>
+<p>Attention également à la qualité du code que vous écrivez, j'en tiendrai compte dans la notation</p>
+
+	  <p><b>Très important</b> : chaque question peut être traitée de manière indépendante. Si votre code  ne donne pas le résultat escompté, ne restez pas coincés ! Avancez !  J'évaluerai  tout code écrit !</p>
+
+  </div>
+
+  <!-- Quelques rappels -->
+	
+	
+
+
+  <!-- Premiers projets NetBeans -->
+	
+		<h1 id="Q1" class="w3-xxxlarge w3-text-red"><b>Exercice 1 </b></h1>
+		<h2>3 points (15 minutes)</h2>
+		<hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>
+    Ouvrez l'archive <a href="files/exercice1-etu.zip"> de la première question</a>. En vous inspirant de la vidéo, complétez le fichier <span class="code">script.js</span> écrire le code permettant de : 
+          <ul>
+            <Li>Toutes les catégories (Education, Skills, ...) soient en vert au chargement de la page </Li>
+            <Li>Ajouter le prénom Nicholas à côté du nom Journet au chargement de la page</Li>
+            <Li>Supprimer mon numéro de téléphone au chargement de la page</Li>
+            <Li>Après le paragraphe "email" ajouter (au chargement de la page) un nouveau paragraphe avec mon compte twitter  </Li>
+            <li>Au survol de la souris TOUS les intitulés de chaque catégorie apparaissent en orange.</li>
+          </ul>
+
+          code source issu de <a href="https://css-tricks.com/examples/OnePageResume/">css-tricks.com</a>.
+    </p>
+  
+<br>
+  <p>
+  <video width=500px src="video/question1.m4v" controls >
+  </video>
+</p>
+
+
+<h1 id="Q2" class="w3-xxxlarge w3-text-red"><b>Exercice 2 </b></h1>
+    <h2>5 points (20 minutes)</h2>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+
+<p>Ouvrez l'archive <a href="files/exercice2-etu.zip"> de la seconde question question</a>. La vidéo ci-dessous illustre ce qu'est sensée donner le code source : 
+<ul>
+  <li>On sélectionne un élément de la liste</li>
+  <li>Une requête Ajax est envoyée au script <span class="code">fruits.php</span></li>
+  <li>On reçoit une réponse contenant la catégorie de l'élément (fruit ou légume) et les vitamines correspondantes</li>
+  <li>Un peu comme un panier, la liste des courses s'affiche et le total des vitamines s'ajoute. Dans la vidéo, le panier de fruits contient une pomme (vitamine : 10) et une cerise (vitamine : 40), soit 50 de vitamines au total. Le panier de légumes contient un poireau (vitamine : 20) et deux courgettes (10 de vitamine chacune) ce qui représente donc un total de vitamines de 40</li>
+</ul></p>
+  <video width=500px src="video/question2.m4v" controls >
+  </video>
+
+
+  <p>Malheureusement plusieurs erreurs se sont glissées dans le code que je vous fournis et le résultat n'est pas celui escompté. Corrigez ce code. <br><span style="color:red">Indication</span> : les erreurs sont uniquement dans le JS. Ne touchez pas au php et au HTML.</p>
+
+<h1 id="Q3" class="w3-xxxlarge w3-text-red"><b>Exercice 3 </b></h1>
+    <h2>12 points (1H00)</h2>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+
+<p>
+Récupérez <a href="files/exercice3-etu.zip">une archive</a> contenant plusieurs fichiers. Vous aurez à écrire du code uniquement dans <span class="code">code.js</span>.
+</p>
+
+
+
+<p>
+  Je vous propose de réaliser un quiz permettant à une personne de tester sa culture en rock-star.  <br>
+  7 portraits sont affichés. Il y a une liste en dessous de chaque portrait. Si aucune réponse n'est sélectionnée alors le portrait n'est pas encadré. Si la réponse est bonne alors le portrait est entouré en vert et rouge si la réponse est mauvaise.
+</p>
+
+ <video width=500px src="video/question3.m4v" controls >
+  </video>
+
+<p>
+Le principe est simple. Un script php (dans l'archive) a pour fonction de récupérer votre requête et de vous indiquer si vous avez la bonne réponse ou non. <br>
+Il prend deux paramètres : l'id du portrait (entre 1 et 7) et le nom d'une rock-star. Le web service vous répond gagné ou perdu (à vous de regarder sous quel format).
+</p>
+
+<p>Par exemple <span class="code">rock.php?id=1&answer=Mickael-Jackson</span> répond : gagné</p>
+<p>Par exemple <span class="code">rock.php?id=2&answer=Elvis-Presley</span> répond : perdu</p>
+
+
+  
+<p>
+Le code de votre site ne contient pas les listes  comme sur la vidéo. C'est à vous de les créer en JS (JQuery si vous voulez) à partir du tableau donné en ligne 1 de <span class="code">code.js</span> <br>
+
+<span class="code">var tabRockers = ["Sid-Viscious","David-Bowie","Mickael-Jackson","Ozzy-Osbourne","Kiss",
+"Amy-Winehouse","Elvis-Presley"];</span>
+<br>
+
+
+Ecrivez le contenu de la fonction <span class="code">creerListes()</span>. 
+
+ 
+
+</p>
+
+
+<p>Ecrire le contenu de la fonction <span class="code">getAnswer(id)</span> prenant en paramètre l'id de la liste  et qui :
+
+  <ul>
+    <li>Envoie une requète GET AJAX au webservice lui demandant de vérifier sa réponse</li>
+    <li>Récupère la réponse et la parse</li>
+    <li>Affecte la bonne classe au portrait concerné afin qu'il soit encadré en vert ou en rouge selon le cas (regardez le css).</li>
+  </ul>
+   
+   
+   
+
+
+</p>
+
+
+	
+</div>
+
+
+
+
+
+
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML =  element.alt;
+}
+</script>
+
+</body>
+</html>
+

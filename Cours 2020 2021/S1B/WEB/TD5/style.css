@@ -1,0 +1,95 @@
+body{
+    
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: black;
+}
+header{
+    background-color: grey;
+    border: 2px;
+    border-style: solid;
+    border-color: white;
+    margin-bottom: 20px;
+}
+#liste_menu{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1%;
+}
+#liste_menu li{
+    padding-right: 1%;
+    padding-left: 1%;
+}
+#banniere{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+section{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    text-align: center;
+}
+article{
+    background-color: gray;
+    border: 2px;
+    border-style: solid;
+    border-color: white;
+    margin: 10px;
+}
+aside{
+    background-color: grey;
+    border: 2px;
+    border-style: solid;
+    border-color: white;
+    margin: 10px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+#projet{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#reseaux{
+    display: flex;
+    justify-content: space-evenly;
+}
+footer{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+#tweet{
+    background-color: gray;
+    border: 2px;
+    border-style: solid;
+    border-color: white;
+    padding-left: 7%;
+    padding-right: 7%;
+}
+#mes_photos{
+    background-color: gray;
+    border: 2px;
+    border-style: solid;
+    border-color: white;
+    padding-left: 7%;
+    padding-right: 7%;
+}
+#mes_amis{
+    background-color: gray;
+    border: 2px;
+    border-style: solid;
+    border-color: white;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+#tableaux{
+    display: flex;
+}
+h2{
+    text-align: center;
+}

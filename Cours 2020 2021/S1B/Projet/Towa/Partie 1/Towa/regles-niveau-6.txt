@@ -1,0 +1,5 @@
+Niveau 6 : L'activation d'une tour détruit également toutes les tours ennemies sur sa ligne ou sur sa colonne.
+
+L'activation d'une tour détruit toutes les tours sur les cases adjacentes (comme dans les niveaux précédents), mais également toutes les tours ennemies situées sur la même ligne, et toutes les tours ennemies situées sur la même colonne.
+
+Les règles des niveaux précédents concernant la pose d'une tour restent inchangées.

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="m2103" />
+  <title>Projet : jeu de sokoban</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style type="text/css">a.sourceLine {
+display: inline-block;
+line-height: 1.25;
+}
+a.sourceLine {
+pointer-events: none;
+color: inherit;
+text-decoration: inherit;
+}
+a.sourceLine:empty {
+height: 1.2em;
+}
+.sourceCode {
+overflow: visible;
+}
+code.sourceCode {
+white-space: pre;
+position: relative;
+}
+div.sourceCode {
+margin: 1em 0;
+}
+pre.sourceCode {
+margin: 0;
+}
+@media screen {
+div.sourceCode {
+overflow: auto;
+}
+}
+@media print {
+code.sourceCode {
+white-space: pre-wrap;
+}
+a.sourceLine {
+text-indent: -1em;
+padding-left: 1em;
+}
+}
+pre.numberSource a.sourceLine {
+position: relative;
+left: -4em;
+}
+pre.numberSource a.sourceLine::before {
+content: attr(title);
+position: relative;
+left: -1em;
+text-align: right;
+vertical-align: baseline;
+border: none;
+pointer-events: all;
+display: inline-block;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+padding: 0 4px;
+width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource {
+margin-left: 3em;
+border-left: 1px solid #aaaaaa;
+padding-left: 4px;
+}
+div.sourceCode {}
+@media screen {
+a.sourceLine::before {
+text-decoration: underline;
+}
+}
+code span.al {
+color: #ff0000;
+font-weight: bold;
+}
+
+code span.an {
+color: #60a0b0;
+font-weight: bold;
+font-style: italic;
+}
+
+code span.at {
+color: #7d9029;
+}
+
+code span.bn {
+color: #40a070;
+}
+
+code span.bu {}
+
+code span.cf {
+color: #007020;
+font-weight: bold;
+}
+
+code span.ch {
+color: #4070a0;
+}
+
+code span.cn {
+color: #880000;
+}
+
+code span.co {
+color: #60a0b0;
+font-style: italic;
+}
+
+code span.cv {
+color: #60a0b0;
+font-weight: bold;
+font-style: italic;
+}
+
+code span.do {
+color: #ba2121;
+font-style: italic;
+}
+
+code span.dt {
+color: #902000;
+}
+
+code span.dv {
+color: #40a070;
+}
+
+code span.er {
+color: #ff0000;
+font-weight: bold;
+}
+
+code span.ex {}
+
+code span.fl {
+color: #40a070;
+}
+
+code span.fu {
+color: #06287e;
+}
+
+code span.im {}
+
+code span.in {
+color: #60a0b0;
+font-weight: bold;
+font-style: italic;
+}
+
+code span.kw {
+color: #007020;
+font-weight: bold;
+}
+
+code span.op {
+color: #666666;
+}
+
+code span.ot {
+color: #007020;
+}
+
+code span.pp {
+color: #bc7a00;
+}
+
+code span.sc {
+color: #4070a0;
+}
+
+code span.ss {
+color: #bb6688;
+}
+
+code span.st {
+color: #4070a0;
+}
+
+code span.va {
+color: #19177c;
+}
+
+code span.vs {
+color: #4070a0;
+}
+
+code span.wa {
+color: #60a0b0;
+font-weight: bold;
+font-style: italic;
+}
+
+
+:root {
+--title-color: #202080;
+--source-bg-color: rgb(240, 240, 255);
+}
+h1, h2, h3, h4, h5, h6 {
+border-bottom: solid 1px silver;
+color: var(--title-color);
+}
+body {
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+div.sourceCode {
+background-color: var(--source-bg-color);
+padding: 1em;
+}
+#TOC {
+padding: 0.5em;
+border: solid 1px silver;
+}
+#TOC ul {
+list-style-type: none;
+padding-left: 1em;
+}
+nav:before {
+text-indent: 2em;
+content: "Sommaire";
+color: var(--title-color);
+font-weight: bold;
+font-size: large;
+}
+#TOC a {
+text-decoration: none;
+}
+header {
+text-align: center;
+}
+.title {
+}
+.author, .date {
+font-style: italic;
+}
+table, th, td {
+border-collapse: collapse;
+border: solid black 1px;
+padding: 0.5em;
+}
+</style>
+</head>
+<body>
+<header>
+<h1 class="title">Projet : jeu de sokoban</h1>
+<p class="author">m2103</p>
+<p class="date">01-05-2021</p>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#le-jeu-de-sokoban"><span class="toc-section-number">1</span> Le jeu de sokoban</a></li>
+<li><a href="#modalités-du-projet"><span class="toc-section-number">2</span> Modalités du projet</a></li>
+<li><a href="#objectif-1-un-jeu-jouable"><span class="toc-section-number">3</span> Objectif 1 : un jeu jouable</a></li>
+<li><a href="#objectif-2-lecture-de-jeu-à-partir-dun-fichier"><span class="toc-section-number">4</span> Objectif 2 : lecture de jeu à partir d’un fichier</a></li>
+<li><a href="#objectif-3-base-de-données"><span class="toc-section-number">5</span> Objectif 3 : base de données</a></li>
+</ul>
+</nav>
+<h1 id="le-jeu-de-sokoban"><span class="header-section-number">1</span> Le jeu de sokoban</h1>
+<p>Vous connaissez certainement ce jeu :</p>
+<ul>
+<li>Un terrain rectangulaire. Certaines cases sont occupées par des murs, qui bloquent le passage.</li>
+<li>Sur le terrain, il y a des caisses.</li>
+<li>il y a un personnage déplacé (4 directions) par le joueur qui peut
+<ul>
+<li>aller dans une case vide voisins</li>
+<li>ou pousser une série de caisses, si il y a une case vide derrière</li>
+</ul></li>
+<li><strong>objectif</strong> : amener toutes les caisses vers des destinations indiquées.</li>
+</ul>
+<p>Exemple de situation</p>
+<pre><code>  0 1 2 3 4 5 6 7 8
+0 . . # # # # . . .    
+1 # # # . . # # # #    # = mur          
+2 # . . . . . C . #    P = personnage 
+3 # . # . . # C . #    C = caisse
+4 # . x . x # P . #    x = destination
+5 # # # # # # # # #    . = case vide</code></pre>
+<p>Sans vouloir vous priver du plaisir de chercher, pour gagner il faut s’occuper d’abord d’amener la caisse du haut (2,6) dans la destination de gauche. Pour cela il faut contourner par la droite, pousser la caisse à gauche (4,2), manoeuvrer par en haut, etc. La suite de mouvements peut s’écrire <code>RUULLLULDDRDLL</code> (Right Up etc).</p>
+<p><strong>Objectif généraux</strong> du programme</p>
+<ul>
+<li>permettre à un joueur de mener des parties sur des plateaux différents.</li>
+<li>les plateaux seront obtenus à partir de différentes sources
+<ul>
+<li>des fichiers</li>
+<li>une base de données</li>
+</ul></li>
+</ul>
+<h1 id="modalités-du-projet"><span class="header-section-number">2</span> Modalités du projet</h1>
+<ul>
+<li>Travail <strong>en solo</strong>.</li>
+<li>Utilisation des heures de TP et de TD pour avancer sur le projet.</li>
+<li>Projet GIT sur le serveur de l’IUT pour la sauvegarde régulière et le suivi par les enseignants.</li>
+<li>Travail à remettre fin Mai sur la plate-forme Moodle (projet netbeans + rapport)</li>
+</ul>
+<p><strong>Rappel : vos enseignants sont là pour vous aider</strong><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Mais pour cela il faut avoir quelque chose à leur montrer, des questions précises à poser, et tenir compte de leurs indications pour avancer.</p>
+<h1 id="objectif-1-un-jeu-jouable"><span class="header-section-number">3</span> Objectif 1 : un jeu jouable</h1>
+<ol type="1">
+<li>Le code source construit un exemple “en dur”</li>
+</ol>
+<pre><code>Board b = new Board(&quot;Hard-Coded Example&quot;, 5, 6);
+b.addHorizontalWall(0,5,6); b.addHorizontalWall(4,5,6);
+b.addVerticalWall(0,0,5);   b.addVerticalWall(0,5,5);
+b.addBox(2,1);              b.addBox(2,3);
+b.addTarget(3,1);           b.addTarget(3,2);
+b.setPosition(3,4)</code></pre>
+<ol start="2" type="1">
+<li>Il lance une boucle d’interaction avec le joueur</li>
+</ol>
+<ul>
+<li>affichage de la position</li>
+<li>saisie d’une ligne (suite de lettres L R U D, autres caractères ignorés)</li>
+<li>exécution des mouvements</li>
+</ul>
+<p>jusqu’à ce que les caisses soient arrivées à destination, ou que le joueur abandonne.</p>
+<p>La classe principale de votre projet (celle qui a le <code>main</code>) s’appellera <code>Player</code>.</p>
+<h1 id="objectif-2-lecture-de-jeu-à-partir-dun-fichier"><span class="header-section-number">4</span> Objectif 2 : lecture de jeu à partir d’un fichier</h1>
+<p>Un fichier peut contenir une description de plateau, par exemple à ce format simple</p>
+<pre><code>A Simple Board
+##########
+#x.x#....#
+#...C..P.#
+#....C...#
+##########</code></pre>
+<p>Une approche classique et élégante pour faire ce genre de choses (charger des plateaux depuis différentes sources) est de définir une interface <code>BoardBuilder</code> :</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">interface</span> BoardBuilder {</a>
+<a class="sourceLine" id="cb4-2" title="2">    Board <span class="fu">build</span>() <span class="kw">throws</span> BuilderException;</a>
+<a class="sourceLine" id="cb4-3" title="3">}</a></code></pre></div>
+<p>Le rôle d’un <code>Builder</code> est</p>
+<ol type="1">
+<li>d’<em>accumuler</em> des informations à propos d’un objet qu’il faudra construire</li>
+<li>de <em>produire</em> effectivement cet objet quand on le lui demande (par appel à sa méthode <code>build</code>).</li>
+</ol>
+<p><strong>Une des implémentations</strong> sera la classe <code>FileBoardBuilder</code> qui</p>
+<ul>
+<li>lira un fichier texte</li>
+<li><strong>accumulera</strong> les informations (le nom, les positions etc).</li>
+<li>et, quand on appellera la méthode <code>build</code>, fournira une instance de <code>Board</code>, si c’est possible.</li>
+</ul>
+<p><strong>Une autre implémentation</strong> serait un “<code>TextBoardBuilder</code>” à qui on donne des chaînes de caractères :</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1">var builder = <span class="kw">new</span> <span class="fu">TextBoardBuilder</span>(<span class="st">&quot;A Simple Board&quot;</span>);</a>
+<a class="sourceLine" id="cb5-2" title="2">builder.<span class="fu">addRow</span>(<span class="st">&quot;##########&quot;</span>);</a>
+<a class="sourceLine" id="cb5-3" title="3">builder.<span class="fu">addRow</span>(<span class="st">&quot;#x.x#....#&quot;</span>);</a>
+<a class="sourceLine" id="cb5-4" title="4">builder.<span class="fu">addRow</span>(<span class="st">&quot;#...CC.P.#&quot;</span>);</a>
+<a class="sourceLine" id="cb5-5" title="5">builder.<span class="fu">addRow</span>(<span class="st">&quot;#........#&quot;</span>);</a>
+<a class="sourceLine" id="cb5-6" title="6">builder.<span class="fu">addRow</span>(<span class="st">&quot;##########&quot;</span>);</a>
+<a class="sourceLine" id="cb5-7" title="7"></a>
+<a class="sourceLine" id="cb5-8" title="8">var board = builder.<span class="fu">build</span>();</a></code></pre></div>
+<p>Il serait judicieux de</p>
+<ol type="1">
+<li>Commencer par implémenter le <code>TextBoardBuilder</code>.</li>
+<li>S’en servir pour réaliser le <code>FileBoardBuilder</code>.</li>
+</ol>
+<h1 id="objectif-3-base-de-données"><span class="header-section-number">5</span> Objectif 3 : base de données</h1>
+<p>On veut maintenant mettre les plateaux dans une base SQLite. Ça doit pouvoir se faire avec une base à 2 tables.</p>
+<pre><code>BOARDS
+| board_id    | name                 | nb_rows | nb_cols | 
+|-------------|----------------------|---------|---------|
+| &quot;simple&quot;    | &quot;A simple board&quot;     | 5       | 10      |
+| &quot;difficult&quot; | &quot;A really tough one&quot; | ...     | ...     |
+
+ROWS
+| board_id | row_num | description  |
+|----------|---------|--------------|
+| &quot;simple&quot; | 0       | &quot;##########&quot; |
+| &quot;simple&quot; | 1       | &quot;#x.x#....#&quot; |
+| &quot;simple&quot; | 2       | &quot;#...CC.P.#&quot; |
+| &quot;simple&quot; | 3       | &quot;#........#&quot; |
+| &quot;simple&quot; | 4       | &quot;##########&quot; |</code></pre>
+<ol type="1">
+<li>Dans votre projet, définir une autre classe <code>Administrator</code> avec un <code>main</code> avec un menu du genre :</li>
+</ol>
+<pre><code>ADMINISTRATION INTERFACE - USE WITH CAUTION
+
+1. Create new database
+2. List boards
+3. Show board
+4. Add board from file
+5. Remove board from database [DANGEROUS]
+6. Quit.</code></pre>
+<p>Quelques idées</p>
+<ul>
+<li>définir un objet <code>Database</code> qui détiendra une connexion ouverte, et intercédera pour vous auprès de la base de données. Il aura par exemple les méthodes</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb8-1" title="1"><span class="dt">void</span> <span class="fu">add</span>(<span class="bu">String</span> id, Board board);</a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="dt">void</span> <span class="fu">remove</span>(<span class="bu">String</span> id);</a>
+<a class="sourceLine" id="cb8-3" title="3">Board <span class="fu">get</span>(<span class="bu">String</span> id);</a></code></pre></div>
+<ul>
+<li><p>la méthode <code>get</code> pourra employer une <code>TextBoardBuilder</code> pour construire une <code>Board</code> à partir des “rows” prises dans la base.</p></li>
+<li><p>pour l’option 4, faire appel à un <code>FileBoardBuilder</code> pour lire le fichier.</p></li>
+<li><p>Dans la classe <code>Player</code>, faire un menu pour sélectionner un des plateaux de la base.</p></li>
+</ul>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>De préférence pendant les séances prévues.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+</body>
+</html>

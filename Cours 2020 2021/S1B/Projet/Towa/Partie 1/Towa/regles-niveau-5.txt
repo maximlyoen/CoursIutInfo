@@ -1,0 +1,5 @@
+Niveau 5 : La pose sur une case adjacente à une tour ennemie dépose 2 pions.
+
+Dans ce niveau, les règles des niveaux précédents s'appliquent toujours. La seule différence est que lorsqu'un joueur fait une action de pose (P) sur une case vide, et que cette case vide est adjacente à une case contenant déjà une tour ennemie, alors cette action dépose deux pions au lieu d'un seul sur la case vide.
+
+Lorsque la case n'est pas vide, l'action de pose ne dépose qu'un seul pion (qu'il y ait une tour ennemie adjacente ou non).

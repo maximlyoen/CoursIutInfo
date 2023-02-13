@@ -1,0 +1,24 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><element><id>UMLPackage</id><coordinates><x>520</x><y>330</y><w>340</w><h>320</h></coordinates><panel_attributes>clockModel
+--
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>530</x><y>360</y><w>320</w><h>280</h></coordinates><panel_attributes>ClockModel
+--
+_-hour : InterProperty_
+_-minute : InterProperty_
+_-second : InterProperty_
+_/-MAX_HOUR : int/_
+_/-MAX_MINSEC : int/_
+_/-MAX_TIME : int/_
+--
++ ClockModel(int, int, int)
++ getHour() : int
++ setHour() : int
++ getMinute() : int
++ setMinute() : int
++ getSecond() : int
++ setSecond() : int
+addHourObserver(ChangeListener&lt;Number&gt;) : void
+addMinuteObserver(ChangeListener&lt;Number&gt;) : void
+addSecondObserver(ChangeListener&lt;Number&gt;) : void
+
+
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>

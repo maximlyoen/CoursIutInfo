@@ -1,0 +1,875 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np\n",
+    "import math"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Réseau à la main\n",
+    "\n",
+    "Un petit réseau de neurones à la main. Ecrire le code pour implémenter le réseau à 6 neurones vu dans les transparents. On n'implémente pas l'apprentissage, mais la prédiction à partir d'une entrée donnée."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "EX1_biais = [1,0,0,0,-2,2]\n",
+    "EX1_poids = [1,-2,-1,1,2,-1,-2,-1,3,-1,-1,4]\n",
+    "\n",
+    "def EX1_sigmoid(z):\n",
+    "    return(1.0/(1.0+math.exp(-z)))\n",
+    "\n",
+    "def EX1_neurone2poids(i):\n",
+    "    return([EX1_poids[2*i],EX1_poids[2*i+1]])\n",
+    "\n",
+    "def EX1_neurone(i,in1,in2):\n",
+    "    w_poids       = EX1_neurone2poids(i)\n",
+    "    z_aggregation = in1*w_poids[0] + in2*w_poids[1] + EX1_biais[i]\n",
+    "    y_activation  = EX1_sigmoid(z_aggregation)\n",
+    "    return(y_activation)\n",
+    "\n",
+    "def EX1_reseau(in1,in2):\n",
+    "#TODO:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "EX1_reseau(1,-1)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "```\n",
+    "## [0.6177047777553412, 0.8291239841574399]\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "EX1_reseau(0,0)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "```\n",
+    "## [0.5118473769870672, 0.8543839009877142]\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Perceptron\n",
+    "\n",
+    "Ecrire des perceptrons (1 neurone) implémentant AND, OR, NOT.\n",
+    "\n",
+    "Voir cette [article](https://medium.com/@stanleydukor/neural-representation-of-and-or-not-xor-and-xnor-logic-gates-EX2_perceptron-algorithm-b0275375fea1)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def EX2_perceptron_AND(val1, val2):\n",
+    "#TODO:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(\"EX2_perceptron_AND(0,0) : \", EX2_perceptron_AND(0,0))\n",
+    "print(\"EX2_perceptron_AND(1,0) : \", EX2_perceptron_AND(1,0))\n",
+    "print(\"EX2_perceptron_AND(0,1) : \", EX2_perceptron_AND(0,1))\n",
+    "print(\"EX2_perceptron_AND(1,1) : \", EX2_perceptron_AND(1,1))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "```\n",
+    "## EX2_perceptron_AND(0,0) :  0\n",
+    "## EX2_perceptron_AND(1,0) :  0\n",
+    "## EX2_perceptron_AND(0,1) :  0\n",
+    "## EX2_perceptron_AND(1,1) :  1\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def EX2_perceptron_OR(val1, val2):\n",
+    "#TODO:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(\"EX2_perceptron_OR(0,0) : \", EX2_perceptron_OR(0,0))\n",
+    "print(\"EX2_perceptron_OR(1,0) : \", EX2_perceptron_OR(1,0))\n",
+    "print(\"EX2_perceptron_OR(0,1) : \", EX2_perceptron_OR(0,1))\n",
+    "print(\"EX2_perceptron_OR(1,1) : \", EX2_perceptron_OR(1,1))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "```\n",
+    "## EX2_perceptron_OR(0,0) :  0\n",
+    "## EX2_perceptron_OR(1,0) :  1\n",
+    "## EX2_perceptron_OR(0,1) :  1\n",
+    "## EX2_perceptron_OR(1,1) :  1\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def EX2_perceptron_NOT(val1):\n",
+    "#TODO:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(\"EX2_perceptron_NOT(0) : \", EX2_perceptron_NOT(0))\n",
+    "print(\"EX2_perceptron_NOT(1) : \", EX2_perceptron_NOT(1))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "```\n",
+    "## EX2_perceptron_NOT(0) :  1\n",
+    "## EX2_perceptron_NOT(1) :  0\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Couche SoftMax\n",
+    "Ajouter une couche SoftMax au premier réseau."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def EX3_SoftMax(in1,in2):\n",
+    "    exp_in1 = math.exp(in1)\n",
+    "    exp_in2 = math.exp(in2)\n",
+    "    somme = exp_in1+exp_in2\n",
+    "    return([exp_in1/somme,exp_in2/somme])\n",
+    "\n",
+    "def EX3_reseau(in1,in2):\n",
+    "#TODO:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "EX3_reseau(1,-1)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "```\n",
+    "## [0.44734119804813083, 0.5526588019518692]\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "EX3_reseau(1,1)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "```\n",
+    "## [0.3846820512044451, 0.6153179487955549]\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Perceptron et porte logique\n",
+    "\n",
+    "On écrit nous-même le code pour un perceptron à un neurone apprenant une porte logique à deux entrées (AND, OR, XOR).\n",
+    "\n",
+    "Laissons donc la machine les découvrir toute seule !\n",
+    "\n",
+    "1. Pour cela nous allons initialiser les poids à 0.\n",
+    "\n",
+    "2. Puis nous ferons une boucle de plusieurs itérations.\n",
+    "\n",
+    "3. A chaque itération nous calculerons la somme des produits entre les poids et les valeurs. Nous utiliserons par commodité la fonction « dot » de la librairie NumPy qui permet de faire toute seule le produit scalaire (dot product).\n",
+    "\n",
+    "4. Cette somme sera déduite du résultat attendu, pour calculer la valeur de l’erreur.\n",
+    "\n",
+    "5. On multiplie ensuite cette erreur par les valeurs d’entrée et le taux d’apprentissage pour déterminer les nouveaux poids. C’est l’algorithme de descente de gradient, appliqué à un réseau d'un neurone, avec une fonction de perte simple. Le taux d’apprentissage permet d’ajuster à quelle vitesse on apprend. S’il est trop faible l’apprentissage sera long, s’il est trop élevé on n’arrivera pas à apprendre. Ici nous utiliserons une valeur de 1.\n",
+    "\n",
+    "6. On recommence l’opération un certain nombre de fois.\n",
+    "\n",
+    "A la fin on affiche le résultat de chaque valeur d’entrée possible pour vérifier que l’ordinateur a apprit correctement."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from random import choice\n",
+    "from pylab import plot, ylim, show\n",
+    "\n",
+    "# Fonction de pre-activation\n",
+    "# Elle prend en entree la valeur des poids\n",
+    "# Et les valeurs d'entree des neurones (les entree + le biais)\n",
+    "def pre_activation(poids, valeurs_entrees):\n",
+    "    # On realise le produit scalaire (dot product)\n",
+    "    produit_scalaire = poids.T.dot(valeurs_entrees)\n",
+    "    return(produit_scalaire)\n",
+    "\n",
+    "# Fonction d'activation\n",
+    "def fonction_d_activation(produit_scalaire):\n",
+    "    # On retourne 1 si le produit_scalaire est superieur ou egal a 0, 0 sinon\n",
+    "    if produit_scalaire >= 0:\n",
+    "        return(1)\n",
+    "    else:\n",
+    "        return(0)\n",
+    "\n",
+    "# La prediction consiste a pravoir la valeur attendue en sortie en fontion\n",
+    "# des valeurs d'entrae et des poids\n",
+    "def faire_une_prediction(poids, valeurs_entrees):\n",
+    "    produit_scalaire = pre_activation(poids, valeurs_entrees)\n",
+    "    prediction       = fonction_d_activation(produit_scalaire)\n",
+    "    return(prediction)\n",
+    "\n",
+    "def entrainement_du_model(donnees_entrainement, nombre_epoch=10, taux_apprentissage = 1):\n",
+    "    # Epoch : une epoch est un apprentissage sur le jeux de donnees complet\n",
+    "    # Il en faut plusieurs pour arriver a apprendre correctement\n",
+    "    # Une iteration est le passage sur une donnee, il y a donc plusieurs iteration par Epoch.\n",
+    "    # Initialisation des 3 valeurs de poids (entree1, entree2 et biais)\n",
+    "    poids = np.zeros(3)\n",
+    "    # Initialisation d'un tableau pour stocker l'historique des erreurs\n",
+    "    historique_des_erreurs = []\n",
+    "    # On fixe le nombre d'itérations\n",
+    "    # Avec un gros jeux de donnees on piocherait aleatoirement des valeurs\n",
+    "    # Ici on prend tous le jeu de donnees a chaque fois\n",
+    "    nombre_iteration = len(donnees_entrainement)\n",
+    "    for epoch in range(nombre_epoch):\n",
+    "        for i in range(nombre_iteration):\n",
+    "            # On recupere les donnees d'entree et le resultat attendue\n",
+    "            # dans le jeux de donnees d'entrainement\n",
+    "            valeurs_entrees, resultat_attendu = donnees_entrainement[i]\n",
+    "            # On realise une prediction :\n",
+    "            # c'est a dire estimer la valeur attendue en fonction des valeurs d'entree du neurone\n",
+    "            prediction = faire_une_prediction(poids, valeurs_entrees)\n",
+    "            # On soustrait la valeur predite a la valeur attendue\n",
+    "            # Ce qui nous donne l'erreur, elle est egale a 0 si la prediction etait bonne\n",
+    "            # Si elle est toujours a 0 c'est que l'apprentissage est termine (pas fait automatiquement ici)\n",
+    "            erreur = resultat_attendu - prediction\n",
+    "            # On ajoute cette erreur a l'historique des erreurs\n",
+    "            historique_des_erreurs.append(erreur)\n",
+    "            # Cette erreur est multipliee par le taux d'apprentissage et les valeurs d'entree,\n",
+    "            # pour estimer les poids pour la prochaine iteration\n",
+    "            poids = poids + taux_apprentissage * erreur * valeurs_entrees\n",
+    "            #print(\"input=\", valeurs_entrees, \"produit_scalaire=\", produit_scalaire, \" poids=\",poids,\" resultat_attendu=\", resultat_attendu, \" fonction_d_activation(produit_scalaire)=\", fonction_d_activation(produit_scalaire), \" erreur=\", erreur)\n",
+    "    print(\"Erreurs = \", historique_des_erreurs)\n",
+    "    # On affiche le graph de l'evolution de l'erreur\n",
+    "    from pylab import plot, ylim, show\n",
+    "    ylim([-1,1])\n",
+    "    plot(historique_des_erreurs)\n",
+    "    show()\n",
+    "    return(poids)\n",
+    "\n",
+    "def utilisation_du_model(poids, donnees):\n",
+    "    # Utilisation des poids issue de l'entrainement sur les differentes valeurs\n",
+    "    for valeurs_entrees,_ in donnees: # \"_\" sert a ignorer la derniere colonne du tableau qui contient le resultat attendu\n",
+    "     prediction = faire_une_prediction(poids, valeurs_entrees)\n",
+    "     print(\"{} -> {}\".format(valeurs_entrees[:2], prediction))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Le jeux de donnees avec le resultat attendu pour un OR\n",
+    "# [entree1, entree2, biais d'activation], resultat attendu\n",
+    "donnees_entrainement_OR = [\n",
+    "#TODO:\n",
+    "]\n",
+    "\n",
+    "# Le jeux de donnees avec le resultat attendu pour un AND\n",
+    "donnees_entrainement_AND = [\n",
+    "#TODO:\n",
+    "]\n",
+    "\n",
+    "# Le jeux de donnees avec le resultat attendu pour un XOR\n",
+    "donnees_entrainement_XOR = [\n",
+    "#TODO:\n",
+    "]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print('-----> La porte logique AND\\n')\n",
+    "# Choix du jeu de donnees AND\n",
+    "donnees_entrainement = donnees_entrainement_AND\n",
+    "# Le model est la structure du reseau de neurones, ici il n'y a qu'un neurone\n",
+    "# L'entrainement consiste a calculer/determiner les poids en fonction du resultat attendu. Cette etape s'appel \"train\" ou \"fit\" en anglais\n",
+    "poids_calcules = entrainement_du_model(donnees_entrainement, nombre_epoch=8)\n",
+    "print(\"poids_calcules pour AND : \", poids_calcules)\n",
+    "utilisation_du_model(poids_calcules, donnees_entrainement)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "```\n",
+    "## -----> La porte logique AND\n",
+    "##\n",
+    "## Erreurs =  [-1, 0, 0, 1, -1, -1, 0, 1, 0, -1, -1, 1, 0, 0, -1, 1, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\n",
+    "## poids_calcules pour AND :  [ 2.  1. -3.]\n",
+    "## [0 0] -> 0\n",
+    "## [0 1] -> 0\n",
+    "## [1 0] -> 0\n",
+    "## [1 1] -> 1\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "![and](and.png)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print('\\n-----> La porte logique OR\\n')\n",
+    "# Entrainement sur le jeu de donnees OR\n",
+    "donnees_entrainement = donnees_entrainement_OR\n",
+    "poids_calcules = entrainement_du_model(donnees_entrainement, nombre_epoch=8)\n",
+    "print(\"poids_calcules pour OR : \", poids_calcules)\n",
+    "utilisation_du_model(poids_calcules, donnees_entrainement)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "```\n",
+    "## -----> La porte logique OR\n",
+    "##\n",
+    "## Erreurs =  [-1, 1, 0, 0, -1, 0, 1, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\n",
+    "## poids_calcules pour OR :  [ 1.  1. -1.]\n",
+    "## [0 0] -> 0\n",
+    "## [0 1] -> 1\n",
+    "## [1 0] -> 1\n",
+    "## [1 1] -> 1\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "![or](or.png)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print('\\n-----> La porte logique XOR\\n')\n",
+    "# Entrainement sur le jeu de donnees XOR\n",
+    "donnees_entrainement = donnees_entrainement_XOR\n",
+    "poids_calcules = entrainement_du_model(donnees_entrainement, nombre_epoch=30)\n",
+    "print(\"poids_calcules pour XOR : \", poids_calcules)\n",
+    "utilisation_du_model(poids_calcules, donnees_entrainement)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "```\n",
+    "## -----> La porte logique XOR\n",
+    "##\n",
+    "## Erreurs =  [-1, 1, 0, -1, 0, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1]\n",
+    "## poids_calcules pour XOR :  [-1.  0.  0.]\n",
+    "## [0 0] -> 1\n",
+    "## [0 1] -> 1\n",
+    "## [1 0] -> 0\n",
+    "## [1 1] -> 0\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "![xor](xor.png)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "On s'apercoit que ca ne marche pas bien pour XOR. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Keras\n",
+    "\n",
+    "On reprend l'exercice précédent, mais maintenant avec Keras. Essayons de trouver des architectures simples permettant d'apprendre ces portes logiques."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from keras.models import Sequential\n",
+    "from keras.layers import Dense"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# On cree un modele a 1 neurone\n",
+    "model_GATE_1 = Sequential()\n",
+    "model_GATE_1.add(Dense(1, input_dim=2, kernel_initializer='uniform', activation='linear'))\n",
+    "model_GATE_1.compile(loss='mean_squared_error',optimizer='adam',metrics=['binary_accuracy'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Jeu d'entrainement\n",
+    "X_AND = np.array([[0,0],[0,1],[1,0],[1,1]], 'float32')\n",
+    "y_AND = np.array([[0],[0],[0],[1]], 'float32')\n",
+    "\n",
+    "X_OR = np.array([[0,0],[0,1],[1,0],[1,1]], 'float32')\n",
+    "y_OR = np.array([[0],[1],[1],[1]], 'float32')\n",
+    "\n",
+    "X_XOR = np.array([[0,0],[0,1],[1,0],[1,1]], 'float32')\n",
+    "y_XOR = np.array([[0],[1],[1],[0]], 'float32')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# On l'utilise pour AND, OR, XOR\n",
+    "model_GATE_1.fit(X_AND, y_AND, batch_size=1, epochs=500, verbose=0)\n",
+    "print('AND\\n',model_GATE_1.predict(X_AND))\n",
+    "model_GATE_1.fit(X_OR, y_OR, batch_size=1, epochs=500, verbose=0)\n",
+    "print('OR\\n',model_GATE_1.predict(X_OR))\n",
+    "model_GATE_1.fit(X_XOR, y_XOR, batch_size=1, epochs=500, verbose=0)\n",
+    "print('XOR\\n',model_GATE_1.predict(X_XOR))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "```\n",
+    "## AND\n",
+    "## [[-0.05656542]\n",
+    "## [ 0.28171366]\n",
+    "## [ 0.2839092 ]\n",
+    "## [ 0.6221883 ]]\n",
+    "## OR\n",
+    "## [[0.23869596]\n",
+    "## [0.74797744]\n",
+    "## [0.747899  ]\n",
+    "## [1.2571805 ]]\n",
+    "## XOR\n",
+    "## [[0.2950383 ]\n",
+    "## [0.46415508]\n",
+    "## [0.46454698]\n",
+    "## [0.6336638 ]]\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Commentaires ?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# On cree un modele a 16+1 neurones\n",
+    "model_GATE_2 = Sequential()\n",
+    "model_GATE_2.add(Dense(16,  input_dim=2, kernel_initializer='uniform', activation='linear'))\n",
+    "model_GATE_2.add(Dense(1,  kernel_initializer='uniform', activation='linear'))\n",
+    "model_GATE_2.compile(loss='mean_squared_error',optimizer='adam',metrics=['binary_accuracy'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "model_GATE_2.fit(X_AND, y_AND, batch_size=1, epochs=500, verbose=0)\n",
+    "print('AND\\n',model_GATE_2.predict(X_AND))\n",
+    "model_GATE_2.fit(X_OR, y_OR, batch_size=1, epochs=500, verbose=0)\n",
+    "print('OR\\n',model_GATE_2.predict(X_OR))\n",
+    "model_GATE_2.fit(X_XOR, y_XOR, batch_size=1, epochs=500, verbose=0)\n",
+    "print('XOR\\n',model_GATE_2.predict(X_XOR))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "```\n",
+    "## AND\n",
+    "## [[-0.24956843]\n",
+    "## [ 0.25079954]\n",
+    "## [ 0.24919148]\n",
+    "## [ 0.74955946]]\n",
+    "## OR\n",
+    "## [[0.24835508]\n",
+    "## [0.7467753 ]\n",
+    "## [0.7471659 ]\n",
+    "## [1.2455862 ]]\n",
+    "## XOR\n",
+    "## [[0.43765485]\n",
+    "## [0.4907372 ]\n",
+    "## [0.4912936 ]\n",
+    "## [0.544376  ]]\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# On change les fonctions d'activation\n",
+    "model_GATE_3 = Sequential()\n",
+    "model_GATE_3.add(Dense(16,  input_dim=2, kernel_initializer='uniform', activation='relu'))\n",
+    "model_GATE_3.add(Dense(1,  kernel_initializer='uniform', activation='sigmoid'))\n",
+    "model_GATE_3.compile(loss='mean_squared_error',optimizer='adam',metrics=['binary_accuracy'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "model_GATE_3.fit(X_AND, y_AND, batch_size=1, epochs=500, verbose=0)\n",
+    "print('AND\\n',model_GATE_3.predict(X_AND))\n",
+    "model_GATE_3.fit(X_OR, y_OR, batch_size=1, epochs=500, verbose=0)\n",
+    "print('OR\\n',model_GATE_3.predict(X_OR))\n",
+    "model_GATE_3.fit(X_XOR, y_XOR, batch_size=1, epochs=500, verbose=0)\n",
+    "print('XOR\\n',model_GATE_3.predict(X_XOR))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "```\n",
+    "## AND\n",
+    "## [[0.02520248]\n",
+    "## [0.10788918]\n",
+    "## [0.12162659]\n",
+    "## [0.8556914 ]]\n",
+    "## OR\n",
+    "## [[0.05734885]\n",
+    "## [0.9641379 ]\n",
+    "## [0.96226853]\n",
+    "## [0.99985147]]\n",
+    "## XOR\n",
+    "## [[0.02720192]\n",
+    "## [0.9822955 ]\n",
+    "## [0.98179877]\n",
+    "## [0.9999757 ]]\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# On met 2 couches cachees\n",
+    "model_GATE_4 = Sequential()\n",
+    "model_GATE_4.add(Dense(16,  input_dim=2, kernel_initializer='uniform', activation='relu'))\n",
+    "model_GATE_4.add(Dense(16,  kernel_initializer='uniform', activation='relu'))\n",
+    "model_GATE_4.add(Dense(1,  kernel_initializer='uniform', activation='sigmoid'))\n",
+    "model_GATE_4.compile(loss='mean_squared_error',optimizer='adam',metrics=['binary_accuracy'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "model_GATE_4.fit(X_XOR, y_XOR, batch_size=1, epochs=500, verbose=0)\n",
+    "print('XOR\\n',model_GATE_4.predict(X_XOR))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "```\n",
+    "## XOR\n",
+    "## [[0.08140022]\n",
+    "## [0.96489716]\n",
+    "## [0.97951764]\n",
+    "## [0.01660845]]\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Discussion ?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Quelques exemples avec Keras"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "On donne ici quelques exemples pour configurer un réseau de neurone avec Keras (voir la [documentation](https://keras.io/api/)).\n",
+    "\n",
+    "On considère des réseaux de type `percepron multicouches` (MLP : Multi-Layer Perceptron)."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Classification binaire"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "- 1 couche d'entrée avec 12 neurones, chacun connecté une donnée d'entrée de dimension 8\n",
+    "- 1 couche cachée avec 8 neurones, entièrement connectée aux couches d'entrée et de sortie\n",
+    "- 1 couche de sortie avec 1 neurone, la fonction d'activation 'sigmoid' renvoyant une valeur comprise dans l'intervalle [0,1]\n",
+    "\n",
+    "L'option `kernel_initializer` signifie que les poids du modèle sont initialisés avec des valeurs aléatoires suivant une distribution uniforme. On peut aussi spécifier l'option `bias_initializer`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from keras.models import Sequential\n",
+    "from keras.layers import Dense\n",
+    "\n",
+    "model=Sequential()\n",
+    "model.add(Dense(12, input_dim=8, kernel_initializer='uniform', activation='relu'))\n",
+    "model.add(Dense(8, kernel_initializer='uniform', activation='relu'))\n",
+    "model.add(Dense(1, kernel_initializer='uniform', activation='sigmoid'))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Classification multi-classes"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "On ajoute en plus des couches de type `Dropout`.\n",
+    "La couche de type `Dropout` met aléatoirement les données d'entrée à 0 avec une fréquence $\\tau$ à chaque étape de la période d'apprentissage, ce qui permet d'éviter le surajustement (overfitting). Les entrées qui ne sont pas mises à 0 sont mises à l'échelle par $1/(1 - \\tau)$ de sorte que la somme de toutes les entrées reste inchangée.\n",
+    "\n",
+    "Notez que la couche `Dropout` ne s'applique que lorsque l'apprentissage est défini à `True`, de sorte qu'aucune valeur n'est abandonnée pendant l'inférence. Lors de l'utilisation de `model.fit()`, l'apprentissage sera automatiquement réglé sur `True`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from keras.layers import Dropout\n",
+    "\n",
+    "model=Sequential()\n",
+    "model.add(Dense(512, activation=\"relu\", input_shape=(784,)))\n",
+    "model.add(Dropout(0.2))\n",
+    "model.add(Dense(512, activation=\"relu\"))\n",
+    "model.add(Dropout(0.2))\n",
+    "model.add(Dense(10, activation='softmax'))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Pour faciliter l'interprétation de la couche de sortie (avec 10 classes), on active la fonction `softmax`."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Régression"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Il est peut spécifier directement la taille des données d'entrée."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "model=Sequential()\n",
+    "model.add(Dense(64,activation=\"relu\", input_dim=X_AND.shape[1]))\n",
+    "model.add(Dense(1))"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.9 (main, Dec 15 2022, 17:11:09) [Clang 14.0.0 (clang-1400.0.29.202)]"
+  },
+  "vscode": {
+   "interpreter": {
+    "hash": "b0fa6594d8f4cbf19f97940f81e996739fb7646882a419484c72d19e05852a7e"
+   }
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}

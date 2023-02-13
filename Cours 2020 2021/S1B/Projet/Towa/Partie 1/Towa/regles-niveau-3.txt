@@ -1,0 +1,3 @@
+Niveau 3 : Pose de pions uniquement, en limitant à 4 la hauteur d'une tour.
+
+Chaque tour de jeu de ce niveau est constitué d'une pose de pions. Il est interdit de poser un pion sur une case contenant un pion (ou plusieurs) d'une autre couleur. La hauteur d'une tour ne doit pas dépasser 4.

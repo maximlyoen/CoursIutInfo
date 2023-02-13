@@ -1,0 +1,10 @@
+int a = 3;
+println("la variable a vaut ",a);
+float b = -1.5;
+println("la variable b vaut ",b);
+char c = '@';
+println("la variable c vaut ",c);
+boolean d = true;
+println("la variable d vaut ",d);
+boolean e = false;
+println("la variable e vaut ",e);

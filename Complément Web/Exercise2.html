@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <title>Document</title>
+    <script>
+        function color(){
+            if(premier.style.color == 'red'){
+                premier.style.color = 'blue'
+            }else{
+                premier.style.color = 'red'
+            }
+        }
+
+        function modifyText() {
+            var t2 = document.getElementById("second");
+            t2.firstChild.nodeValue = "coucou";    
+        }
+        
+    </script>
+</head>
+<body>
+    <h1><a id="premier" onclick="color()">Premier Lien</a></h1>
+    <h1><a id="second" onclick="modifyText()">Second Lien</a></h1>
+</body>
+</html>

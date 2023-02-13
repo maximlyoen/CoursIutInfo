@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="utf-8"/>
+        <title>Formulaire</title>
+    </head>
+
+    <body>
+        <h1>Mon premier formulaire HTML5</h1>
+        
+            <fieldset>
+                <legend>Vos données personnelles</legend>
+
+                <p>Nom<input type="text" name="Nom" placeholder="Votre Nom" style=border-radius:0.4em></p>
+
+                <p>Prénom <input type="text" name="Prénom" placeholder="Votre prénom" style=border-radius:0.4em></p>
+
+                <p>Date de naissance <input type="text" name="Date naissance" style=border-radius:0.4em></p>
+
+                <fieldset>
+                    <legend>Lieu de naissance</legend>
+                    <p>
+                    <input type="radio" name="Lieu de naissance" >Seine-Saint-Denis
+                    
+                    <input type="radio" name="Lieu de naissance">Reste du monde
+                    </p>
+                </fieldset>
+
+                <p>Adresse postale<input type="text" name="Adresse postale" placeholder="Votre adresse" style=border-radius:0.4em></p>
+
+                <p>Code postal<input type="text" name="Code postal" placeholder="93000" style=border-radius:0.4em></p>
+
+                <p>Adresse électronique<input type="text" name="Adresse électronique" placeholder="Votre adresse électronique" style=border-radius:0.4em></p>
+
+                <p>Page personnelle<input type="text" name="Page personnelle" placeholder="Votre page Web" style=border-radius:0.4em></p>
+
+                <p>Téléphone portable<input type="text" name="Téléphone portable" placeholder="06012345467" style=border-radius:0.4em></p>
+
+                <p>Semestre
+                    <select name="pets" id="pet-select" style=border-radius:0.4em>
+                        <option value="S1">S1</option>
+                        <option value="S2">S2</option>
+                        <option value="S3">S3</option>
+                        <option value="S4">S4</option>
+                    </select>
+                </p>
+
+                <p> Niveau en HTML
+                    <input type="range" min="0" max="100">
+                </p>
+
+                <fieldset>
+                    <legend>>Connaissances</legend>
+                    <p>
+                    <input type="checkbox" name="Connaissances">HTML
+                    <input type="checkbox" name="Connaissances">CSS
+                    <input type="checkbox" name="Connaissances">formulaires
+                    <input type="checkbox" name="Connaissances">JavaScript
+                    </p>
+                </fieldset>
+
+                <button name="button" style=border-radius:0.4em>Envoyer</button>
+
+            </fieldset>
+    </body>
+</html>
