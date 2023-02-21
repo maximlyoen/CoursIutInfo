@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    public enum Ops {
+    /**public enum Ops {
         PLUS("+"),
         MOINS("-"),
         FOIS("*"),
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 compute();
             }
         });
-        /*
+
         Button btnClear = (Button)findViewById(R.id.btnClear);
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,11 +50,11 @@ public class MainActivity extends AppCompatActivity {
                 clear();
             }
         });
-        */
+
     }
 
     private void updateDisplay() {
-        int v=op1;
+    int v=op1;
         if(!isOp1) {
             v=op2;
         }
@@ -118,5 +118,5 @@ public class MainActivity extends AppCompatActivity {
         }catch (NumberFormatException | ClassCastException e) {
             Toast.makeText(this, "Valeur erronée",Toast.LENGTH_LONG);
         }
-    }
+    }**/
 }
