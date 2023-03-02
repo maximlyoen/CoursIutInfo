@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
-
+/*
     public enum Ops {
         PLUS("+"),
         MOINS("-"),
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 clear();
             }
         });
-        */
+
     }
 
     private void updateDisplay() {
@@ -119,4 +119,5 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Valeur erronée",Toast.LENGTH_LONG);
         }
     }
+    */
 }
