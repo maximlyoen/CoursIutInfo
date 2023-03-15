@@ -9,6 +9,7 @@
         <thead>
             <tr>
                 <th>Lng/Lat</th>
+                <th>Adresse</th>
                 <th>Texte</th>
                 <th>actions</th>
             </tr>
@@ -19,6 +20,8 @@
                 <td class="col-sm-3">
                     <kbd>{{ message.longitude|number_format(7) }}, {{ message.latitude|number_format(7) }}</kbd>
                 </td>
+                <td>
+                    <code>{{ message.address }}</code>
                 <td>
                     <code>{{ message.text }}</code>
                 </td>

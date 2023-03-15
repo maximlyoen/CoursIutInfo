@@ -1,0 +1,29 @@
+nelmio_api_doc:
+  documentation:
+    info:
+      title: My App
+      description: This is an awesome app!
+      version: 1.0.0
+    components:
+      schemas:
+        Radius:
+          type: float
+          example: 3
+          description: "A radius in kilometers"
+  areas: # to filter documented areas
+    path_patterns:
+      - ^/api(?!/doc$) # Accepts routes under /api except for /doc
+#   routes:
+#     methods:
+#       - {
+#           path: "/api/messages",
+#           controller: "App\\Controller\\MessageController::getMessages",
+#           method: "GET",
+#         }
+#     response:
+#       - {
+#           method: "GET",
+#           path: "/api/messages",
+#           status: 200,
+#           type: "App\\Entity\\Message",
+#         }

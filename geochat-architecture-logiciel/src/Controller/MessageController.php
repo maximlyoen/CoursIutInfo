@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Services\AddressAPIService;
 
 #[Route('/message')]
 class MessageController extends AbstractController
@@ -30,16 +31,19 @@ class MessageController extends AbstractController
     }
 
     #[Route('/new', name: 'app_message_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, MessageRepository $messageRepository): Response
+    public function new(Request $request, MessageRepository $messageRepository, AddressAPIService $api): Response
     {
         $message = new Message();
-        $message
-            ->setLongitude(44.8437806)
-            ->setLatitude(-0.5710693);
+        
+        
         $form = $this->createForm(MessageType::class, $message);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $lnglat = $api->getLngLat($message->getAddress());
+            $message->setLongitude($lnglat[0]);
+            $message->setLatitude($lnglat[1]);
+
             $messageRepository->save($message, true);
 
             return $this->redirectToRoute('app_message_index', [], Response::HTTP_SEE_OTHER);
